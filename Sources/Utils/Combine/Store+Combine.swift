@@ -12,7 +12,7 @@ extension Store: Publisher {
 
         public init(store: Store, target: Target) {
             buffer = DemandBuffer(subscriber: target)
-            
+
             disposable = store
                 .subscribe(onNext: { state in
                     _ = target.receive(state)

@@ -123,14 +123,15 @@ final class ReducerTests: XCTestCase {
         let dispatcher = Dispatcher()
         let initialState = TestState()
         let store = Store<TestState, TestStoreController>(initialState, dispatcher: dispatcher, storeController: TestStoreController())
-        let expectation = XCTestExpectation(description: "Subscription Emits")
+        let expectation = XCTestExpectation(description: "Subscription Emits 1")
 
         store
             .reducerGroup()
             .disposed(by: dBag)
         store
-            .subscribe(onNext: { state in
-                if state.counter == 1 {
+            .map { $0.counter }
+            .subscribe(onNext: { counter in
+                if counter == 1 {
                     expectation.fulfill()
                 }
             })
@@ -153,11 +154,12 @@ final class ReducerTests: XCTestCase {
             .reducerGroup()
             .disposed(by: dBag)
         store
-            .sink { state in
-                if state.counter == 1 {
+            .map { $0.counter }
+            .sink { counter in
+                if counter == 1 {
                     expectation1.fulfill()
                 }
-                if state.counter == 2 {
+                if counter == 2 {
                     expectation2.fulfill()
                 }
             }
