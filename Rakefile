@@ -19,3 +19,11 @@ task(:setup) do
   sh('brew outdated carthage || brew upgrade carthage')
   sh('carthage bootstrap --no-use-binaries --cache-builds --use-xcframeworks')
 end
+
+task(:tests) do
+  sh('arch -x86_64 bundle exec fastlane pass_tests')
+end
+
+task(:validate_podfile) do
+  sh('arch -x86_64 bundle exec pod lib lint --allow-warnings')
+end
