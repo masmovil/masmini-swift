@@ -47,7 +47,7 @@ jobs:
       run: arch -arm64 rake
 
     - name: Run all tests ⚙️
-      run: arch -arm64 ake tests
+      run: arch -arm64 rake tests
 
     - name: Validate Podfile ⚙️
       run: arch -arm64 rake validate_podfile
