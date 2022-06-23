@@ -4,7 +4,7 @@ public typealias SubscriptionMap = SharedDictionary<String, OrderedSet<Dispatche
 
 public final class Dispatcher {
     public struct DispatchMode {
-        // swiftlint:disable:next type_name nesting
+        // swiftlint:disable:next type_name
         public enum UI {
             case sync, async
         }

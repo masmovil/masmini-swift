@@ -14,21 +14,26 @@ public class TypedTask<T>: Equatable, CustomDebugStringConvertible {
     public required init(status: Status = .idle,
                          started: Date = Date(),
                          expiration: Expiration = .immediately,
-                         data: T? = nil,
                          tag: String? = nil,
-                         progress: Decimal? = nil,
-                         error: Error? = nil) {
+                         progress: Decimal? = nil) {
         self.status = status
         self.started = started
         self.expiration = expiration
         self.tag = tag
         self.progress = progress
-        self.error = error
 
-        if case .success(let payload) = status {
+        switch status {
+        case .success(let payload):
+            self.error = nil
             self.data = payload
-        } else {
-            self.data = data
+
+        case .failure(let error):
+            self.error = error
+            self.data = nil
+
+        default:
+            self.data = nil
+            self.error = nil
         }
     }
 
@@ -92,7 +97,7 @@ public class TypedTask<T>: Equatable, CustomDebugStringConvertible {
         }
     }
 
-    static func requestIdle(tag: String? = nil) -> Self {
+    public static func requestIdle(tag: String? = nil) -> Self {
         .init(status: .idle, tag: tag)
     }
 
@@ -179,7 +184,7 @@ public extension TypedTask where T == Any {
     }
 
     static func requestFailure(_ error: Error, tag: String? = nil) -> Self {
-        .init(status: .failure(error: error), tag: tag, error: error)
+        .init(status: .failure(error: error), tag: tag)
     }
 
     static func requestSuccess(_ expiration: Expiration = .immediately, tag: String? = nil) -> Self {
@@ -193,7 +198,7 @@ public extension TypedTask where T == None {
     }
 
     static func requestFailure(_ error: Error, tag: String? = nil) -> Self {
-        .init(status: .failure(error: error), tag: tag, error: error)
+        .init(status: .failure(error: error), tag: tag)
     }
 
     static func requestSuccess(_ expiration: Expiration = .immediately, tag: String? = nil) -> Self {

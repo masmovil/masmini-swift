@@ -112,6 +112,14 @@
 		F27A3BA12857AAD600DADCE0 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27A3B9F2857AAD600DADCE0 /* None.swift */; };
 		F27A3BA22857AAD600DADCE0 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27A3B9F2857AAD600DADCE0 /* None.swift */; };
 		F27A3BA32857AAD600DADCE0 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27A3B9F2857AAD600DADCE0 /* None.swift */; };
+		F288761028649AFE0069790E /* FutureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* FutureExtensions.swift */; };
+		F288761128649AFE0069790E /* FutureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* FutureExtensions.swift */; };
+		F288761228649AFE0069790E /* FutureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* FutureExtensions.swift */; };
+		F288761328649AFE0069790E /* FutureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* FutureExtensions.swift */; };
+		F288761528649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
+		F288761628649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
+		F288761728649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
+		F288761828649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
 		F2DF4A2B26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2C26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2D26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
@@ -190,6 +198,8 @@
 		F222D7752525373B00672E7B /* KeyedTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedTaskTests.swift; sourceTree = "<group>"; };
 		F26C3AF722537A4600189D28 /* Mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mini.swift; sourceTree = "<group>"; };
 		F27A3B9F2857AAD600DADCE0 /* None.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = None.swift; sourceTree = "<group>"; };
+		F288760F28649AFE0069790E /* FutureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureExtensions.swift; sourceTree = "<group>"; };
+		F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasks.swift; sourceTree = "<group>"; };
 		F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDictionaryTests.swift; sourceTree = "<group>"; };
 		F2DF4A2E26C2C29300C082CF /* Dispatcher+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatcher+Rx.swift"; sourceTree = "<group>"; };
 		F2DF4A3626C2DAC300C082CF /* DemandBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
@@ -362,6 +372,8 @@
 			children = (
 				F2DF4A3F26C2DBDC00C082CF /* Store+Combine.swift */,
 				F2DF4A3626C2DAC300C082CF /* DemandBuffer.swift */,
+				F288760F28649AFE0069790E /* FutureExtensions.swift */,
+				F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -707,7 +719,9 @@
 				F27A3BA02857AAD600DADCE0 /* None.swift in Sources */,
 				F222D4BB25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B725249B7E00672E7B /* Middleware.swift in Sources */,
+				F288761528649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
 				F222D4B325249B7E00672E7B /* Task.swift in Sources */,
+				F288761028649AFE0069790E /* FutureExtensions.swift in Sources */,
 				F222D4CF25249B7E00672E7B /* Store.swift in Sources */,
 				F222D4FD25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F2DF4A4026C2DBDC00C082CF /* Store+Combine.swift in Sources */,
@@ -750,7 +764,9 @@
 				F27A3BA12857AAD600DADCE0 /* None.swift in Sources */,
 				F222D4BC25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B825249B7E00672E7B /* Middleware.swift in Sources */,
+				F288761628649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
 				F222D4B425249B7E00672E7B /* Task.swift in Sources */,
+				F288761128649AFE0069790E /* FutureExtensions.swift in Sources */,
 				F222D4D025249B7E00672E7B /* Store.swift in Sources */,
 				F222D4FE25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F2DF4A4126C2DBDC00C082CF /* Store+Combine.swift in Sources */,
@@ -793,7 +809,9 @@
 				F27A3BA22857AAD600DADCE0 /* None.swift in Sources */,
 				F222D4BD25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B925249B7E00672E7B /* Middleware.swift in Sources */,
+				F288761728649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
 				F222D4B525249B7E00672E7B /* Task.swift in Sources */,
+				F288761228649AFE0069790E /* FutureExtensions.swift in Sources */,
 				F222D4D125249B7E00672E7B /* Store.swift in Sources */,
 				F222D4FF25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F2DF4A4226C2DBDC00C082CF /* Store+Combine.swift in Sources */,
@@ -836,7 +854,9 @@
 				F27A3BA32857AAD600DADCE0 /* None.swift in Sources */,
 				F222D4BE25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4BA25249B7E00672E7B /* Middleware.swift in Sources */,
+				F288761828649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
 				F222D4B625249B7E00672E7B /* Task.swift in Sources */,
+				F288761328649AFE0069790E /* FutureExtensions.swift in Sources */,
 				F222D4D225249B7E00672E7B /* Store.swift in Sources */,
 				F222D50025249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F2DF4A4326C2DBDC00C082CF /* Store+Combine.swift in Sources */,
