@@ -36,7 +36,7 @@ public final class Dispatcher {
 
     private func build() -> Chain {
         middleware.reduce(root) { (chain: Chain, middleware: Middleware) -> Chain in
-            return ForwardingChain { action in
+            ForwardingChain { action in
                 middleware.perform(action, chain)
             }
         }

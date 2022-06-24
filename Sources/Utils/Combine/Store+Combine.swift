@@ -29,7 +29,7 @@ extension Store: Publisher {
             case .next(let element):
                 _ = buffer.buffer(value: element)
 
-            case .error(_):
+            case .error:
                 fatalError("This subscription never emit an error")
 
             case .completed:

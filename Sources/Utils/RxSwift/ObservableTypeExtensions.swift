@@ -14,9 +14,8 @@ extension ObservableType {
     /// - Parameter fn: Filter closure.
     /// - Returns: The first element that matches the filter.
     public func filterOne(_ condition: @escaping (Element) -> Bool) -> Observable<Element> {
-        filter {
-            return condition($0)
-        }.take(1)
+        filter { condition($0) }
+            .take(1)
     }
 }
 
