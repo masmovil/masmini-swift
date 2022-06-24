@@ -45,7 +45,7 @@ class TaskTests: XCTestCase {
     func test_data_and_progress() {
         let data = "comiendo perritos calientes"
         let progress: Decimal = 0.5
-        let task = TypedTask(data: data, progress: progress)
+        let task = TypedTask(status: .success(payload: data), progress: progress)
 
         XCTAssertEqual(task.data, data)
         XCTAssertEqual(task.progress, progress)
