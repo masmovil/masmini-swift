@@ -1,8 +1,9 @@
 import Foundation
 
-public typealias Task = TypedTask<Any>
+public typealias AnyTask = Task<Any>
+public typealias EmptyTask = Task<EmptyPayload>
 
-public class TypedTask<T>: Equatable, CustomDebugStringConvertible {
+public class Task<T>: Equatable, CustomDebugStringConvertible {
     public let status: Status
     public let started: Date
     public let expiration: Expiration
@@ -117,7 +118,7 @@ public class TypedTask<T>: Equatable, CustomDebugStringConvertible {
     }
 }
 
-public extension TypedTask {
+public extension Task {
     enum Status: Equatable {
         case idle
         case running
@@ -126,7 +127,7 @@ public extension TypedTask {
     }
 }
 
-public extension TypedTask.Status where T: Equatable {
+public extension Task.Status where T: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle), (.running, .running):
@@ -141,7 +142,7 @@ public extension TypedTask.Status where T: Equatable {
     }
 }
 
-public extension TypedTask.Status {
+public extension Task.Status {
     static func == (lhs: Self, rhs: Self) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle), (.running, .running):
@@ -153,7 +154,7 @@ public extension TypedTask.Status {
     }
 }
 
-public extension TypedTask {
+public extension Task {
     enum Expiration {
         case immediately
         case short
@@ -178,7 +179,7 @@ public extension TypedTask {
     }
 }
 
-public extension TypedTask where T == Any {
+public extension Task where T == Any {
     static func requestRunning(tag: String? = nil) -> Self {
         .init(status: .running, tag: tag)
     }
@@ -187,12 +188,15 @@ public extension TypedTask where T == Any {
         .init(status: .failure(error: error), tag: tag)
     }
 
-    static func requestSuccess(_ expiration: Expiration = .immediately, tag: String? = nil) -> Self {
-        .init(status: .success(payload: None.none), expiration: expiration, tag: tag)
+    static func requestSuccess(_ expiration: Expiration = .immediately, payload: T? = nil, tag: String? = nil) -> Self {
+        if let payload = payload {
+            return .init(status: .success(payload: payload), expiration: expiration, tag: tag)
+        }
+        return .init(status: .success(payload: EmptyPayload.none), expiration: expiration, tag: tag)
     }
 }
 
-public extension TypedTask where T == None {
+public extension Task where T == EmptyPayload {
     static func requestRunning(tag: String? = nil) -> Self {
         .init(status: .running, tag: tag)
     }
@@ -206,7 +210,7 @@ public extension TypedTask where T == None {
     }
 }
 
-public func ==<T> (lhs: TypedTask<T>, rhs: TypedTask<T>) -> Bool {
+public func ==<T> (lhs: Task<T>, rhs: Task<T>) -> Bool {
     lhs.status == rhs.status &&
         lhs.started == rhs.started &&
         lhs.progress == rhs.progress

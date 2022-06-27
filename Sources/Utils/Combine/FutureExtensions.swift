@@ -3,46 +3,44 @@ import Foundation
 
 public extension Future where Failure: Error {
     func dispatch<A: CompletableAction>(action: A.Type,
-                                        expiration: TypedTask<Output>.Expiration = .immediately,
-                                        on dispatcher: Dispatcher,
-                                        fillOnError errorPayload: A.Payload? = nil)
+                                        expiration: Task<Output>.Expiration = .immediately,
+                                        on dispatcher: Dispatcher)
     -> Cancellable where A.Payload == Output {
         sink { completion in
             switch completion {
             case .failure(let error):
-                let failedTask = TypedTask<Output>(status: .failure(error: error))
-                let action = A(task: failedTask, payload: errorPayload)
+                let failedTask = Task<Output>(status: .failure(error: error))
+                let action = A(task: failedTask)
                 dispatcher.dispatch(action)
 
             case .finished:
                 break
             }
         } receiveValue: { payload in
-            let successTask = TypedTask(status: .success(payload: payload), expiration: expiration)
-            let action = A(task: successTask, payload: payload)
+            let successTask = Task(status: .success(payload: payload), expiration: expiration)
+            let action = A(task: successTask)
             dispatcher.dispatch(action)
         }
     }
 
     func dispatch<A: KeyedCompletableAction>(action: A.Type,
-                                             expiration: TypedTask<Output>.Expiration = .immediately,
+                                             expiration: Task<Output>.Expiration = .immediately,
                                              key: A.Key,
-                                             on dispatcher: Dispatcher,
-                                             fillOnError errorPayload: A.Payload? = nil)
+                                             on dispatcher: Dispatcher)
     -> Cancellable where A.Payload == Output {
         sink { completion in
             switch completion {
             case .failure(let error):
-                let failedTask = TypedTask<Output>(status: .failure(error: error), tag: "\(key)")
-                let action = A(task: failedTask, payload: errorPayload, key: key)
+                let failedTask = Task<Output>(status: .failure(error: error), tag: "\(key)")
+                let action = A(task: failedTask, key: key)
                 dispatcher.dispatch(action)
 
             case .finished:
                 break
             }
         } receiveValue: { payload in
-            let successTask = TypedTask(status: .success(payload: payload), expiration: expiration, tag: "\(key)")
-            let action = A(task: successTask, payload: payload, key: key)
+            let successTask = Task(status: .success(payload: payload), expiration: expiration, tag: "\(key)")
+            let action = A(task: successTask, key: key)
             dispatcher.dispatch(action)
         }
     }
@@ -50,7 +48,7 @@ public extension Future where Failure: Error {
 
 public extension Future where Output == Never {
     func dispatch<A: EmptyAction>(action: A.Type,
-                                  expiration: TypedTask<A.Payload>.Expiration = .immediately,
+                                  expiration: Task<A.Payload>.Expiration = .immediately,
                                   on dispatcher: Dispatcher)
     -> Cancellable {
         sink { completion in
@@ -68,7 +66,7 @@ public extension Future where Output == Never {
     }
 
     func dispatch<A: KeyedEmptyAction>(action: A.Type,
-                                       expiration: TypedTask<A.Payload>.Expiration = .immediately,
+                                       expiration: Task<A.Payload>.Expiration = .immediately,
                                        key: A.Key,
                                        on dispatcher: Dispatcher)
     -> Cancellable {

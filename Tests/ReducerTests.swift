@@ -18,10 +18,10 @@ class OneTestAction: Action {
 }
 
 struct TestState: StateType {
-    public let testTask: TypedTask<None>
+    public let testTask: Task<EmptyPayload>
     public let counter: Int
 
-    public init(testTask: TypedTask<None> = .requestIdle(), counter: Int = 0) {
+    public init(testTask: Task<EmptyPayload> = .requestIdle(), counter: Int = 0) {
         self.testTask = testTask
         self.counter = counter
     }

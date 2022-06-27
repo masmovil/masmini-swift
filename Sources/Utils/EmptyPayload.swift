@@ -1,11 +1,11 @@
 import Foundation
 
-public struct None: Equatable {
+public struct EmptyPayload: Equatable {
     internal init() {
     }
 
-    public static var none: None {
-        None()
+    public static var none: EmptyPayload {
+        EmptyPayload()
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {

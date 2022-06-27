@@ -1,9 +1,28 @@
+import Combine
 @testable import Mini
 import RxSwift
 import XCTest
 
 final class DispatcherTests: XCTestCase {
-    func test_subscription_count() {
+    func test_subscription_count_with_combine() {
+        let dispatcher = Dispatcher()
+        var bag = Set<AnyCancellable>()
+
+        XCTAssert(dispatcher.subscriptionCount == 0)
+
+        dispatcher.subscribe { (_: OneTestAction) -> Void in }.store(in: &bag)
+        dispatcher.subscribe { (_: OneTestAction) -> Void in }.store(in: &bag)
+
+        print(dispatcher.subscriptionCount)
+
+        XCTAssert(dispatcher.subscriptionCount == 2)
+
+        bag.removeAll()
+
+        XCTAssert(dispatcher.subscriptionCount == 0)
+    }
+
+    func test_subscription_count_with_rx() {
         let dispatcher = Dispatcher()
         let disposable = CompositeDisposable()
 
@@ -19,6 +38,10 @@ final class DispatcherTests: XCTestCase {
         disposable.dispose()
 
         XCTAssert(dispatcher.subscriptionCount == 0)
+    }
+    
+    func test_send_value_to_dispatcher_from_future() {
+        
     }
 
     func test_add_remove_service() {

@@ -1,25 +1,25 @@
 import Combine
 import Foundation
 
-public extension Publisher where Output == (Task, Task) {
+public extension Publisher where Output == (AnyTask, AnyTask) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == (Task, Task, Task) {
+public extension Publisher where Output == (AnyTask, AnyTask, AnyTask) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == (Task, Task, Task, Task) {
+public extension Publisher where Output == (AnyTask, AnyTask, AnyTask, AnyTask) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == [Task] {
+public extension Publisher where Output == [AnyTask] {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
@@ -29,7 +29,7 @@ public extension Publishers {
     /// Create a `Publisher` that connect an Upstream (Another publisher) that emits `Task` (Array or Tuples)
     /// The Output of this Publisher always is a combined `Task`
     struct CombineMiniTasks<Upstream: Publisher>: Publisher {
-        public typealias Output = Task
+        public typealias Output = AnyTask
         public typealias Failure = Upstream.Failure
 
         public let upstream: Upstream
@@ -65,18 +65,18 @@ extension Publishers.CombineMiniTasks {
         }
 
         func receive(_ input: Input) -> Subscribers.Demand {
-            let tasks: [Task]
+            let tasks: [AnyTask]
             switch input {
-            case let inputTuple2 as (Task, Task):
+            case let inputTuple2 as (AnyTask, AnyTask):
                 tasks = [inputTuple2.0, inputTuple2.1]
 
-            case let inputTuple3 as (Task, Task, Task):
+            case let inputTuple3 as (AnyTask, AnyTask, AnyTask):
                 tasks = [inputTuple3.0, inputTuple3.1, inputTuple3.2]
 
-            case let inputTuple4 as (Task, Task, Task, Task):
+            case let inputTuple4 as (AnyTask, AnyTask, AnyTask, AnyTask):
                 tasks = [inputTuple4.0, inputTuple4.1, inputTuple4.2, inputTuple4.3]
 
-            case let inputTasks as [Task]:
+            case let inputTasks as [AnyTask]:
                 tasks = inputTasks
 
             default:

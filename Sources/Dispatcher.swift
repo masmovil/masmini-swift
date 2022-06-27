@@ -181,7 +181,7 @@ public final class Dispatcher {
     }
 }
 
-public final class DispatcherSubscription: Comparable {
+public final class DispatcherSubscription: Comparable, Equatable, Hashable {
     internal let dispatcher: Dispatcher
 
     public let id: Int
@@ -204,6 +204,10 @@ public final class DispatcherSubscription: Comparable {
 
     public func on(_ action: Action) {
         completion(action)
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 
     public static func == (lhs: DispatcherSubscription, rhs: DispatcherSubscription) -> Bool {

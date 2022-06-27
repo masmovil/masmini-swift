@@ -18,7 +18,7 @@ class TaskTests: XCTestCase {
     }
 
     func test_check_states_for_success_task() {
-        let task = TypedTask<Int>(status: .success(payload: 5))
+        let task = Task<Int>(status: .success(payload: 5))
 
         XCTAssertTrue(task.status == .success(payload: 5))
         XCTAssertNil(task.error)
@@ -45,14 +45,14 @@ class TaskTests: XCTestCase {
     func test_data_and_progress() {
         let data = "comiendo perritos calientes"
         let progress: Decimal = 0.5
-        let task = TypedTask(status: .success(payload: data), progress: progress)
+        let task = Task(status: .success(payload: data), progress: progress)
 
         XCTAssertEqual(task.data, data)
         XCTAssertEqual(task.progress, progress)
     }
 
     func test_success_task_with_payload() {
-        let task = TypedTask(status: .success(payload: "hola"))
+        let task = Task(status: .success(payload: "hola"))
 
         XCTAssertEqual(task.data, "hola")
     }
