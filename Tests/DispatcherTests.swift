@@ -41,7 +41,7 @@ final class DispatcherTests: XCTestCase {
     }
     
     func test_send_value_to_dispatcher_from_future() {
-        
+        XCTFail("WIP")
     }
 
     func test_add_remove_service() {
