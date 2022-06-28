@@ -20,7 +20,8 @@ class TaskTests: XCTestCase {
     func test_check_states_for_success_task() {
         let task = Task<Int, Error>(status: .success(payload: 5))
 
-        XCTAssertTrue(task.status == .success(payload: 5))
+        XCTAssertTrue(task.isSuccessful)
+        XCTAssertEqual(task.data, 5)
         XCTAssertNil(task.error)
 
         XCTAssertFalse(task.isRunning)

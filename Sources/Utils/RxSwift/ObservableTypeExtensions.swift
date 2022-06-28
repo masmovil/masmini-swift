@@ -48,7 +48,7 @@ extension ObservableType where Self.Element: StateType {
     private func filterForKeyedLifetime<K: Hashable> (
         key: K,
         taskMap: @escaping ((Element) -> KeyedTask<K, Element, Error>),
-        lifetime: AnyTask.Lifetime) -> Observable<Element> {
+        lifetime: Task<Element, Error>.Lifetime) -> Observable<Element> {
         switch lifetime {
         case .once:
             return self
@@ -88,7 +88,7 @@ extension ObservableType where Self.Element: StateType {
     private func subscribe<K: Hashable> (
         key: K,
         taskMap: @escaping ((Self.Element) -> KeyedTask<K, Element, Error>),
-        lifetime: AnyTask.Lifetime = .once,
+        lifetime: Task<Element, Error>.Lifetime = .once,
         success: @escaping (Self.Element) -> Void = { _ in },
         error: @escaping (Self.Element) -> Void = { _ in })
         -> Disposable {
@@ -143,7 +143,7 @@ extension ObservableType where Element: StoreType & ObservableType, Element.Stat
         key: K,
         taskMap: @escaping (Element.State) -> KeyedTask<K, Element.Element, Error>,
         on store: Self.Element,
-        lifetime: AnyTask.Lifetime = .once)
+        lifetime: Task<Element.Element, Error>.Lifetime = .once)
         -> Observable<Self.Element.State> {
             let observable: Observable<Self.Element.State> = Observable.create { observer in
                 let action = action()

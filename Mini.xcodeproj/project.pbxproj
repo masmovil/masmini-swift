@@ -124,6 +124,10 @@
 		F297D27F286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */; };
 		F297D280286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */; };
 		F297D281286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */; };
+		F2AD8249286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
+		F2AD824A286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
+		F2AD824B286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
+		F2AD824C286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
 		F2C09DAC286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
 		F2C09DAD286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
 		F2C09DAE286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
@@ -142,6 +146,10 @@
 		F2C09DC0286B530D009C9C8E /* ActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DBF286B530D009C9C8E /* ActionTests.swift */; };
 		F2C09DC1286B530D009C9C8E /* ActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DBF286B530D009C9C8E /* ActionTests.swift */; };
 		F2C09DC2286B530D009C9C8E /* ActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DBF286B530D009C9C8E /* ActionTests.swift */; };
+		F2C09DC4286B57EA009C9C8E /* Task+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* Task+Status.swift */; };
+		F2C09DC5286B57EA009C9C8E /* Task+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* Task+Status.swift */; };
+		F2C09DC6286B57EA009C9C8E /* Task+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* Task+Status.swift */; };
+		F2C09DC7286B57EA009C9C8E /* Task+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* Task+Status.swift */; };
 		F2DF4A2B26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2C26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2D26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
@@ -223,12 +231,14 @@
 		F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasks.swift; sourceTree = "<group>"; };
 		F297D268286A02E200323F24 /* KeyedPayloadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedPayloadAction.swift; sourceTree = "<group>"; };
 		F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatcher+Combine.swift"; sourceTree = "<group>"; };
+		F2AD8248286B6AD9005C024F /* Task+Expiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Expiration.swift"; sourceTree = "<group>"; };
 		F2C09DAB286B1490009C9C8E /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		F2C09DAF286B14B7009C9C8E /* TestActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActions.swift; sourceTree = "<group>"; };
 		F2C09DB3286B1598009C9C8E /* TestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestServices.swift; sourceTree = "<group>"; };
 		F2C09DB7286B2672009C9C8E /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
 		F2C09DBB286B2698009C9C8E /* TestStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStoreController.swift; sourceTree = "<group>"; };
 		F2C09DBF286B530D009C9C8E /* ActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTests.swift; sourceTree = "<group>"; };
+		F2C09DC3286B57EA009C9C8E /* Task+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Status.swift"; sourceTree = "<group>"; };
 		F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDictionaryTests.swift; sourceTree = "<group>"; };
 		F2DF4A2E26C2C29300C082CF /* Dispatcher+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatcher+Rx.swift"; sourceTree = "<group>"; };
 		F2DF4A3626C2DAC300C082CF /* DemandBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
@@ -335,6 +345,8 @@
 				F222D4AD25249B7D00672E7B /* StateType.swift */,
 				F222D4AE25249B7D00672E7B /* Store.swift */,
 				F222D4A725249B7D00672E7B /* Task.swift */,
+				F2AD8248286B6AD9005C024F /* Task+Expiration.swift */,
+				F2C09DC3286B57EA009C9C8E /* Task+Status.swift */,
 				F222D4DC25249B9A00672E7B /* Utils */,
 			);
 			path = Sources;
@@ -775,9 +787,11 @@
 				F222D4F525249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
 				F222D4BF25249B7E00672E7B /* ActionReducer.swift in Sources */,
 				F26C3AF822537A4600189D28 /* Mini.swift in Sources */,
+				F2AD8249286B6AD9005C024F /* Task+Expiration.swift in Sources */,
 				F222D4C725249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F222D4F125249B9A00672E7B /* PrimitiveSequenceTypeExtensions.swift in Sources */,
+				F2C09DC4286B57EA009C9C8E /* Task+Status.swift in Sources */,
 				F2DF4A3226C2C31400C082CF /* Dispatcher+Rx.swift in Sources */,
 				F222D50925249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -827,9 +841,11 @@
 				F222D4F625249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
 				F222D4C025249B7E00672E7B /* ActionReducer.swift in Sources */,
 				F26C3AF922537A4600189D28 /* Mini.swift in Sources */,
+				F2AD824A286B6AD9005C024F /* Task+Expiration.swift in Sources */,
 				F222D4C825249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F222D4F225249B9A00672E7B /* PrimitiveSequenceTypeExtensions.swift in Sources */,
+				F2C09DC5286B57EA009C9C8E /* Task+Status.swift in Sources */,
 				F2DF4A3326C2C31500C082CF /* Dispatcher+Rx.swift in Sources */,
 				F222D50A25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -879,9 +895,11 @@
 				F222D4F725249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
 				F222D4C125249B7E00672E7B /* ActionReducer.swift in Sources */,
 				F26C3AFA22537A4600189D28 /* Mini.swift in Sources */,
+				F2AD824B286B6AD9005C024F /* Task+Expiration.swift in Sources */,
 				F222D4C925249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F222D4F325249B9A00672E7B /* PrimitiveSequenceTypeExtensions.swift in Sources */,
+				F2C09DC6286B57EA009C9C8E /* Task+Status.swift in Sources */,
 				F2DF4A3426C2C31600C082CF /* Dispatcher+Rx.swift in Sources */,
 				F222D50B25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -931,9 +949,11 @@
 				F222D4F825249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
 				F222D4C225249B7E00672E7B /* ActionReducer.swift in Sources */,
 				F26C3AFB22537A4600189D28 /* Mini.swift in Sources */,
+				F2AD824C286B6AD9005C024F /* Task+Expiration.swift in Sources */,
 				F222D4CA25249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F222D4F425249B9B00672E7B /* PrimitiveSequenceTypeExtensions.swift in Sources */,
+				F2C09DC7286B57EA009C9C8E /* Task+Status.swift in Sources */,
 				F2DF4A3526C2C31700C082CF /* Dispatcher+Rx.swift in Sources */,
 				F222D50C25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);

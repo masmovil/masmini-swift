@@ -137,66 +137,12 @@ public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertibl
         data: \(String(describing: data)), progress: \(String(describing: progress)) error: \(String(describing: error))
         """
     }
-}
 
-public extension Task {
-    enum Status: Equatable {
-        case idle
-        case running
-        case success(payload: T)
-        case failure(error: E)
-    }
-}
-
-public extension Task.Status where T: Equatable {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle), (.running, .running):
-            return true
-
-        case (.success(let lhsPayload), .success(let rhsPayload)):
-            return lhsPayload == rhsPayload
-
-        default:
-            return false
-        }
-    }
-}
-
-public extension Task.Status {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle), (.running, .running):
-            return true
-
-        default:
-            return false
-        }
-    }
-}
-
-public extension Task {
-    enum Expiration {
-        case immediately
-        case short
-        case long
-        case custom(TimeInterval)
-
-        public var value: TimeInterval {
-            switch self {
-            case .immediately:
-                return 0
-
-            case .short:
-                return 60
-
-            case .long:
-                return 180
-
-            case .custom(let value):
-                return value
-            }
-        }
+    // MARK: Equatable
+    public static func ==<T, E> (lhs: Task<T, E>, rhs: Task<T, E>) -> Bool {
+        lhs.status == rhs.status &&
+            lhs.started == rhs.started &&
+            lhs.progress == rhs.progress
     }
 }
 
@@ -204,10 +150,4 @@ public extension Task where T == Void {
     static func requestSuccess(expiration: Expiration = .immediately, tag: String? = nil) -> Self {
         .init(status: .success(payload: ()), expiration: expiration, tag: tag)
     }
-}
-
-public func ==<T, E> (lhs: Task<T, E>, rhs: Task<T, E>) -> Bool {
-    lhs.status == rhs.status &&
-        lhs.started == rhs.started &&
-        lhs.progress == rhs.progress
 }
