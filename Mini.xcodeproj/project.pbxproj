@@ -128,6 +128,9 @@
 		F2AD824A286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
 		F2AD824B286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
 		F2AD824C286B6AD9005C024F /* Task+Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD8248286B6AD9005C024F /* Task+Expiration.swift */; };
+		F2AD8252286B7087005C024F /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD824D286B7065005C024F /* PublishersTests.swift */; };
+		F2AD8253286B7087005C024F /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD824D286B7065005C024F /* PublishersTests.swift */; };
+		F2AD8254286B7088005C024F /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD824D286B7065005C024F /* PublishersTests.swift */; };
 		F2C09DAC286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
 		F2C09DAD286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
 		F2C09DAE286B1490009C9C8E /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DAB286B1490009C9C8E /* TestError.swift */; };
@@ -232,6 +235,7 @@
 		F297D268286A02E200323F24 /* KeyedPayloadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedPayloadAction.swift; sourceTree = "<group>"; };
 		F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatcher+Combine.swift"; sourceTree = "<group>"; };
 		F2AD8248286B6AD9005C024F /* Task+Expiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Expiration.swift"; sourceTree = "<group>"; };
+		F2AD824D286B7065005C024F /* PublishersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishersTests.swift; sourceTree = "<group>"; };
 		F2C09DAB286B1490009C9C8E /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		F2C09DAF286B14B7009C9C8E /* TestActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActions.swift; sourceTree = "<group>"; };
 		F2C09DB3286B1598009C9C8E /* TestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestServices.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				F222D52525249BD900672E7B /* DictionaryExtensionsTests.swift */,
 				F222D52225249BD900672E7B /* DispatcherTests.swift */,
 				F222D7752525373B00672E7B /* KeyedTaskTests.swift */,
+				F2AD824D286B7065005C024F /* PublishersTests.swift */,
 				F222D52125249BD900672E7B /* ReducerTests.swift */,
 				F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */,
 				F222D52325249BD900672E7B /* TaskTests.swift */,
@@ -803,6 +808,7 @@
 			files = (
 				F2C09DB0286B14B7009C9C8E /* TestActions.swift in Sources */,
 				F2C09DBC286B2698009C9C8E /* TestStoreController.swift in Sources */,
+				F2AD8252286B7087005C024F /* PublishersTests.swift in Sources */,
 				F222D52C25249BD900672E7B /* ReducerTests.swift in Sources */,
 				F222D53225249BD900672E7B /* TaskTests.swift in Sources */,
 				F2C09DB8286B2672009C9C8E /* TestState.swift in Sources */,
@@ -857,6 +863,7 @@
 			files = (
 				F2C09DB1286B14B7009C9C8E /* TestActions.swift in Sources */,
 				F2C09DBD286B2698009C9C8E /* TestStoreController.swift in Sources */,
+				F2AD8253286B7087005C024F /* PublishersTests.swift in Sources */,
 				F222D52D25249BD900672E7B /* ReducerTests.swift in Sources */,
 				F222D53325249BD900672E7B /* TaskTests.swift in Sources */,
 				F2C09DB9286B2672009C9C8E /* TestState.swift in Sources */,
@@ -911,6 +918,7 @@
 			files = (
 				F2C09DB2286B14B7009C9C8E /* TestActions.swift in Sources */,
 				F2C09DBE286B2698009C9C8E /* TestStoreController.swift in Sources */,
+				F2AD8254286B7088005C024F /* PublishersTests.swift in Sources */,
 				F222D52E25249BD900672E7B /* ReducerTests.swift in Sources */,
 				F222D53425249BD900672E7B /* TaskTests.swift in Sources */,
 				F2C09DBA286B2672009C9C8E /* TestState.swift in Sources */,

@@ -1,25 +1,25 @@
 import Combine
 import Foundation
 
-public extension Publisher where Output == (AnyTask, AnyTask) {
+public extension Publisher where Output == (TaskType, TaskType) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == (AnyTask, AnyTask, AnyTask) {
+public extension Publisher where Output == (TaskType, TaskType, TaskType) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == (AnyTask, AnyTask, AnyTask, AnyTask) {
+public extension Publisher where Output == (TaskType, TaskType, TaskType, TaskType) {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
 
-public extension Publisher where Output == [AnyTask] {
+public extension Publisher where Output == [TaskType] {
     func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
         Publishers.CombineMiniTasks(upstream: self)
     }
@@ -29,7 +29,7 @@ public extension Publishers {
     /// Create a `Publisher` that connect an Upstream (Another publisher) that emits `Task` (Array or Tuples)
     /// The Output of this Publisher always is a combined `Task`
     struct CombineMiniTasks<Upstream: Publisher>: Publisher {
-        public typealias Output = AnyTask
+        public typealias Output = TaskType
         public typealias Failure = Upstream.Failure
 
         public let upstream: Upstream
@@ -65,18 +65,18 @@ extension Publishers.CombineMiniTasks {
         }
 
         func receive(_ input: Input) -> Subscribers.Demand {
-            let tasks: [AnyTask]
+            let tasks: [TaskType]
             switch input {
-            case let inputTuple2 as (AnyTask, AnyTask):
+            case let inputTuple2 as (TaskType, TaskType):
                 tasks = [inputTuple2.0, inputTuple2.1]
 
-            case let inputTuple3 as (AnyTask, AnyTask, AnyTask):
+            case let inputTuple3 as (TaskType, TaskType, TaskType):
                 tasks = [inputTuple3.0, inputTuple3.1, inputTuple3.2]
 
-            case let inputTuple4 as (AnyTask, AnyTask, AnyTask, AnyTask):
+            case let inputTuple4 as (TaskType, TaskType, TaskType, TaskType):
                 tasks = [inputTuple4.0, inputTuple4.1, inputTuple4.2, inputTuple4.3]
 
-            case let inputTasks as [AnyTask]:
+            case let inputTasks as [TaskType]:
                 tasks = inputTasks
 
             default:
@@ -86,12 +86,12 @@ extension Publishers.CombineMiniTasks {
             if let failureTask = tasks.first(where: { $0.isFailure }) {
                 return downstream.receive(failureTask)
             } else if tasks.map({ $0.isRunning }).contains(true) {
-                return downstream.receive(.requestRunning())
+                return downstream.receive(AnyTask.requestRunning())
             } else if !tasks.map({ $0.isSuccessful }).contains(false) {
-                return downstream.receive(.requestSuccess(()))
-            } else {
-                return downstream.receive(Task())
+                return downstream.receive(AnyTask.requestSuccess(()))
             }
+
+            return downstream.receive(AnyTask())
         }
 
         func receive(completion: Subscribers.Completion<Failure>) {
