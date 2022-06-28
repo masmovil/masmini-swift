@@ -3,7 +3,16 @@ import Foundation
 public typealias AnyTask = Task<Any, Error>
 public typealias EmptyTask<E: Error> = Task<Void, E>
 
-public class Task<T, E: Error>: Equatable, CustomDebugStringConvertible {
+public protocol TaskType {
+    var isIdle: Bool { get }
+    var isRunning: Bool { get }
+    var isRecentlySucceeded: Bool { get }
+    var isTerminal: Bool { get }
+    var isSuccessful: Bool { get }
+    var isFailure: Bool { get }
+}
+
+public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertible {
     public let status: Status
     public let started: Date
     public let expiration: Expiration

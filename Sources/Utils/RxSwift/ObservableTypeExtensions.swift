@@ -47,7 +47,7 @@ extension ObservableType where Self.Element: StateType {
 
     private func filterForKeyedLifetime<K: Hashable> (
         key: K,
-        taskMap: @escaping ((Element) -> KeyedTask<K>),
+        taskMap: @escaping ((Element) -> KeyedTask<K, Element, Error>),
         lifetime: AnyTask.Lifetime) -> Observable<Element> {
         switch lifetime {
         case .once:
@@ -87,7 +87,7 @@ extension ObservableType where Self.Element: StateType {
 
     private func subscribe<K: Hashable> (
         key: K,
-        taskMap: @escaping ((Self.Element) -> KeyedTask<K>),
+        taskMap: @escaping ((Self.Element) -> KeyedTask<K, Element, Error>),
         lifetime: AnyTask.Lifetime = .once,
         success: @escaping (Self.Element) -> Void = { _ in },
         error: @escaping (Self.Element) -> Void = { _ in })
@@ -141,7 +141,7 @@ extension ObservableType where Element: StoreType & ObservableType, Element.Stat
         using dispatcher: Dispatcher,
         factory action: @autoclosure @escaping () -> A,
         key: K,
-        taskMap: @escaping (Element.State) -> KeyedTask<K>,
+        taskMap: @escaping (Element.State) -> KeyedTask<K, Element.Element, Error>,
         on store: Self.Element,
         lifetime: AnyTask.Lifetime = .once)
         -> Observable<Self.Element.State> {
