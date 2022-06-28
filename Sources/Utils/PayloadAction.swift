@@ -4,6 +4,8 @@ public protocol PayloadAction {
     associatedtype TaskPayload
     associatedtype TaskError: Error
 
+    var task: Task<TaskPayload, TaskError> { get }
+
     init(task: Task<TaskPayload, TaskError>)
 }
 

@@ -5,6 +5,9 @@ public protocol KeyedPayloadAction {
     associatedtype TaskError: Error
     associatedtype Key: Hashable
 
+    var task: Task<TaskPayload, TaskError> { get }
+    var key: Key { get }
+
     init(task: Task<TaskPayload, TaskError>, key: Key)
 }
 
