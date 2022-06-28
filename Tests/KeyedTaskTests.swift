@@ -3,9 +3,9 @@ import XCTest
 
 class KeyedTaskTests: XCTestCase {
     var tasks: KeyedTask<Int> {
-        [0: Task.requestRunning(),
-                1: Task.requestSuccess(),
-                2: Task.requestFailure(NSError(domain: "domain", code: 44, userInfo: nil))]
+        [0: AnyTask.requestRunning(),
+         1: AnyTask.requestSuccess(()),
+         2: AnyTask.requestFailure(NSError(domain: "domain", code: 44, userInfo: nil))]
     }
 
     func test_isRunning_inside_a_keyedtask() {

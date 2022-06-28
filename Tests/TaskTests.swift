@@ -5,7 +5,7 @@ class TaskTests: XCTestCase {
     let error = NSError(domain: "wawa", code: 69, userInfo: nil)
 
     func test_check_states_for_running_task() {
-        let task = Task.requestRunning()
+        let task = Task<Int, Error>.requestRunning()
 
         XCTAssertEqual(task.status, .running)
         XCTAssertNil(task.error)
@@ -18,7 +18,7 @@ class TaskTests: XCTestCase {
     }
 
     func test_check_states_for_success_task() {
-        let task = Task<Int>(status: .success(payload: 5))
+        let task = Task<Int, Error>(status: .success(payload: 5))
 
         XCTAssertTrue(task.status == .success(payload: 5))
         XCTAssertNil(task.error)
@@ -30,10 +30,10 @@ class TaskTests: XCTestCase {
     }
 
     func test_check_states_for_failure_task() {
-        let task = Task.requestFailure(error)
+        let task = Task<String, NSError>.requestFailure(error)
 
         XCTAssertNotEqual(task.status, .failure(error: error))
-        XCTAssertEqual(task.error as NSError?, error)
+        XCTAssertEqual(task.error, error)
 
         XCTAssertFalse(task.isRunning)
         XCTAssertTrue(task.isFailure)
@@ -45,30 +45,30 @@ class TaskTests: XCTestCase {
     func test_data_and_progress() {
         let data = "comiendo perritos calientes"
         let progress: Decimal = 0.5
-        let task = Task(status: .success(payload: data), progress: progress)
+        let task = Task<String, Error>(status: .success(payload: data), progress: progress)
 
         XCTAssertEqual(task.data, data)
         XCTAssertEqual(task.progress, progress)
     }
 
     func test_success_task_with_payload() {
-        let task = Task(status: .success(payload: "hola"))
+        let task = Task<String, Error>(status: .success(payload: "hola"))
 
         XCTAssertEqual(task.data, "hola")
     }
 
     func test_expiration_of_task_created_with_past_date() {
-        let task = Task(status: .success(payload: "55"), started: Date.distantPast)
+        let task = Task<String, Error>(status: .success(payload: "55"), started: Date.distantPast)
         XCTAssertFalse(task.isRecentlySucceeded)
     }
 
     func test_success_task_with_expiration_setted_to_immediately() {
-        let task = Task.requestSuccess(.immediately)
+        let task = Task<Void, Error>.requestSuccess(expiration: .immediately)
         XCTAssertFalse(task.isRecentlySucceeded)
     }
 
     func test_success_task_with_expiration_setted() {
-        let task = Task.requestSuccess(.custom(2))
+        let task = Task<Void, Error>.requestSuccess(expiration: .custom(2))
         XCTAssertTrue(task.isRecentlySucceeded)
 
         Thread.sleep(forTimeInterval: 3)

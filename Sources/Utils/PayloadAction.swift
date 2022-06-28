@@ -1,13 +1,16 @@
 import Foundation
 
 public protocol PayloadAction {
-    associatedtype Payload
+    associatedtype TaskPayload
+    associatedtype TaskError: Error
 
-    init(task: Task<Payload>)
+    init(task: Task<TaskPayload, TaskError>)
 }
 
 public protocol CompletableAction: Action & PayloadAction { }
 
-public protocol EmptyAction: Action & PayloadAction where Payload == EmptyPayload {
-    init(task: EmptyTask)
+public protocol EmptyAction: Action & PayloadAction {
+    associatedtype TaskPayload = Void
+
+    init(task: EmptyTask<TaskError>)
 }

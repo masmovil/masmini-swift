@@ -20,9 +20,9 @@ extension ObservableType {
 }
 
 extension ObservableType where Self.Element: StateType {
-    private func filterForLifetime<Type, T: Task<Type>> (
+    private func filterForLifetime<Type, T: Task<Type, Error>> (
         taskMap: @escaping ((Self.Element) -> T?),
-        lifetime: Task<Type>.Lifetime) -> Observable<Element> {
+        lifetime: Task<Type, Error>.Lifetime) -> Observable<Element> {
         switch lifetime {
         case .once:
             return self
@@ -64,9 +64,9 @@ extension ObservableType where Self.Element: StateType {
         }
     }
 
-    private func subscribe<Type, T: Task<Type>> (
+    private func subscribe<Type, T: Task<Type, Error>> (
         taskMap: @escaping ((Self.Element) -> T?),
-        lifetime: Task<Type>.Lifetime = .once,
+        lifetime: Task<Type, Error>.Lifetime = .once,
         success: @escaping (Self.Element) -> Void = { _ in },
         error: @escaping (Self.Element) -> Void = { _ in })
         -> Disposable {
@@ -110,12 +110,12 @@ extension ObservableType where Self.Element: StateType {
 }
 
 extension ObservableType where Element: StoreType & ObservableType, Element.State == Element.Element {
-    public static func dispatch<A: Action, T: Task<Element>> (
+    public static func dispatch<A: Action, T: Task<Element, Error>> (
         using dispatcher: Dispatcher,
         factory action: @autoclosure @escaping () -> A,
         taskMap: @escaping (Element.State) -> T?,
         on store: Self.Element,
-        lifetime: Task<Element>.Lifetime = .once)
+        lifetime: Task<Element, Error>.Lifetime = .once)
         -> Observable<Element.State> {
             let observable: Observable<Element.State> = Observable.create { observer in
                 let action = action()

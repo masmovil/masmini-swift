@@ -1,16 +1,17 @@
 import Foundation
 
 public protocol KeyedPayloadAction {
-    associatedtype Payload
+    associatedtype TaskPayload
+    associatedtype TaskError: Error
     associatedtype Key: Hashable
 
-    init(task: Task<Payload>, key: Key)
+    init(task: Task<TaskPayload, TaskError>, key: Key)
 }
 
 public protocol KeyedCompletableAction: Action & KeyedPayloadAction { }
 
-public protocol KeyedEmptyAction: Action & PayloadAction where Payload == EmptyPayload {
-    associatedtype Key: Equatable
+public protocol KeyedEmptyAction: Action & KeyedPayloadAction {
+    associatedtype TaskPayload = Void
 
-    init(task: Task<Payload>, key: Key)
+    init(task: Task<TaskPayload, TaskError>, key: Key)
 }

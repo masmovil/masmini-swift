@@ -88,7 +88,7 @@ extension Publishers.CombineMiniTasks {
             } else if tasks.map({ $0.isRunning }).contains(true) {
                 return downstream.receive(.requestRunning())
             } else if !tasks.map({ $0.isSuccessful }).contains(false) {
-                return downstream.receive(.requestSuccess())
+                return downstream.receive(.requestSuccess(()))
             } else {
                 return downstream.receive(Task())
             }

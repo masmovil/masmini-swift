@@ -3,9 +3,9 @@ import RxSwift
 
 public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Self.Trait == SingleTrait {
     func dispatch<A: CompletableAction>(action: A.Type,
-                                        expiration: Task<Element>.Expiration = .immediately,
+                                        expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately,
                                         on dispatcher: Dispatcher)
-        -> Disposable where A.Payload == Element {
+        -> Disposable where A.TaskPayload == Element, A.TaskError == Error {
         let subscription = self.subscribe(
             onSuccess: { payload in
                 let successTask = Task(status: .success(payload: payload), expiration: expiration)
@@ -13,7 +13,7 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
                 dispatcher.dispatch(action)
             },
             onFailure: { error in
-                let failedTask = Task<Element>(status: .failure(error: error))
+                let failedTask = Task<A.TaskPayload, A.TaskError>(status: .failure(error: error))
                 let action = A(task: failedTask)
                 dispatcher.dispatch(action)
             }
@@ -22,10 +22,10 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
     }
 
     func dispatch<A: KeyedCompletableAction>(action: A.Type,
-                                             expiration: Task<Element>.Expiration = .immediately,
+                                             expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately,
                                              key: A.Key,
                                              on dispatcher: Dispatcher)
-        -> Disposable where A.Payload == Element {
+        -> Disposable where A.TaskPayload == Element, A.TaskError == Error {
         let subscription = self.subscribe(
             onSuccess: { payload in
                 let successTask = Task(status: .success(payload: payload), expiration: expiration, tag: "\(key)")
@@ -33,7 +33,7 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
                 dispatcher.dispatch(action)
             },
             onFailure: { error in
-                let failedTask = Task<Element>(status: .failure(error: error), tag: "\(key)")
+                let failedTask = Task<Element, Error>(status: .failure(error: error), tag: "\(key)")
                 let action = A(task: failedTask, key: key)
                 dispatcher.dispatch(action)
             }
@@ -42,8 +42,8 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
     }
 
     func action<A: CompletableAction>(_ action: A.Type,
-                                      expiration: Task<Element>.Expiration = .immediately)
-        -> Single<A> where A.Payload == Element {
+                                      expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately)
+        -> Single<A> where A.TaskPayload == Element, A.TaskError == Error {
         Single.create { single in
             let subscription = self.subscribe(
                 onSuccess: { payload in
@@ -52,7 +52,7 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
                     single(.success(action))
                 },
                 onFailure: { error in
-                    let failedTask = Task<Element>(status: .failure(error: error))
+                    let failedTask = Task<Element, Error>(status: .failure(error: error))
                     let action = A(task: failedTask)
                     single(.success(action))
                 }
@@ -64,13 +64,13 @@ public extension PrimitiveSequenceType where Self: ObservableConvertibleType, Se
 
 public extension PrimitiveSequenceType where Trait == CompletableTrait, Element == Never {
     func dispatch<A: EmptyAction>(action: A.Type,
-                                  expiration: Task<A.Payload>.Expiration = .immediately,
+                                  expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately,
                                   on dispatcher: Dispatcher)
-        -> Disposable {
+    -> Disposable where A.TaskPayload == Void, A.TaskError == Error {
         let subscription = self.subscribe { completable in
             switch completable {
             case .completed:
-                let action = A(task: .requestSuccess(expiration))
+                let action = A(task: .requestSuccess((), expiration: expiration))
                 dispatcher.dispatch(action)
 
             case .error(let error):
@@ -82,14 +82,14 @@ public extension PrimitiveSequenceType where Trait == CompletableTrait, Element 
     }
 
     func dispatch<A: KeyedEmptyAction>(action: A.Type,
-                                       expiration: Task<A.Payload>.Expiration = .immediately,
+                                       expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately,
                                        key: A.Key,
                                        on dispatcher: Dispatcher)
-        -> Disposable {
+    -> Disposable where A.TaskPayload == Void, A.TaskError == Error {
         let subscription = self.subscribe { completable in
             switch completable {
             case .completed:
-                let action = A(task: .requestSuccess(expiration, tag: "\(key)"), key: key)
+                let action = A(task: .requestSuccess((), expiration: expiration, tag: "\(key)"), key: key)
                 dispatcher.dispatch(action)
 
             case .error(let error):
@@ -101,13 +101,13 @@ public extension PrimitiveSequenceType where Trait == CompletableTrait, Element 
     }
 
     func action<A: EmptyAction>(_ action: A.Type,
-                                expiration: Task<A.Payload>.Expiration = .immediately)
-        -> Single<A> {
+                                expiration: Task<A.TaskPayload, A.TaskError>.Expiration = .immediately)
+    -> Single<A> where A.TaskPayload == Void, A.TaskError == Error {
         Single.create { single in
             let subscription = self.subscribe { event in
                 switch event {
                 case .completed:
-                    let action = A(task: .requestSuccess(expiration))
+                    let action = A(task: .requestSuccess((), expiration: expiration))
                     single(.success(action))
 
                 case .error(let error):
