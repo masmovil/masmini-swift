@@ -482,9 +482,9 @@
 			buildConfigurationList = E26054022121880000D013B5 /* Build configuration list for PBXNativeTarget "Mini-iOS" */;
 			buildPhases = (
 				E260540821218AF400D013B5 /* Swiftlint */,
+				E26053EB212187FF00D013B5 /* Headers */,
 				E26053E9212187FF00D013B5 /* Sources */,
 				E26053EA212187FF00D013B5 /* Frameworks */,
-				E26053EB212187FF00D013B5 /* Headers */,
 				E26053EC212187FF00D013B5 /* Resources */,
 			);
 			buildRules = (
@@ -519,9 +519,9 @@
 			buildConfigurationList = E28123EC2122C2CB00E4F6D0 /* Build configuration list for PBXNativeTarget "Mini-macOS" */;
 			buildPhases = (
 				E20BA60521389BE0005BA13B /* Swiftlint */,
+				E28123D42122C2CB00E4F6D0 /* Headers */,
 				E28123D22122C2CB00E4F6D0 /* Sources */,
 				E28123D32122C2CB00E4F6D0 /* Frameworks */,
-				E28123D42122C2CB00E4F6D0 /* Headers */,
 				E28123D52122C2CB00E4F6D0 /* Resources */,
 			);
 			buildRules = (
@@ -556,9 +556,9 @@
 			buildConfigurationList = E28124432122CC4C00E4F6D0 /* Build configuration list for PBXNativeTarget "Mini-tvOS" */;
 			buildPhases = (
 				E20BA60621389BF7005BA13B /* Swiftlint */,
+				E281242F2122CC4C00E4F6D0 /* Headers */,
 				E281242D2122CC4C00E4F6D0 /* Sources */,
 				E281242E2122CC4C00E4F6D0 /* Frameworks */,
-				E281242F2122CC4C00E4F6D0 /* Headers */,
 				E28124302122CC4C00E4F6D0 /* Resources */,
 			);
 			buildRules = (
@@ -592,9 +592,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E28124532122CC5C00E4F6D0 /* Build configuration list for PBXNativeTarget "Mini-watchOS" */;
 			buildPhases = (
+				E281244B2122CC5B00E4F6D0 /* Headers */,
 				E28124492122CC5B00E4F6D0 /* Sources */,
 				E281244A2122CC5B00E4F6D0 /* Frameworks */,
-				E281244B2122CC5B00E4F6D0 /* Headers */,
 				E281244C2122CC5B00E4F6D0 /* Resources */,
 			);
 			buildRules = (
