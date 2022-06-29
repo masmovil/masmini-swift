@@ -1,5 +1,6 @@
 import Foundation
 
+public typealias Wawa = String
 public typealias Task = TypedTask<Any>
 
 public class TypedTask<T>: Equatable, CustomDebugStringConvertible {
