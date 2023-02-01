@@ -110,9 +110,11 @@ final class DispatcherTests: XCTestCase {
 
         // SEND!
         futureSuccess
+            .eraseToAnyPublisher()
             .dispatch(action: TestCompletableAction.self, on: dispatcher)
             .store(in: &cancellables)
         futureFailure
+            .eraseToAnyPublisher()
             .dispatch(action: TestCompletableAction.self, on: dispatcher)
             .store(in: &cancellables)
 
@@ -158,9 +160,11 @@ final class DispatcherTests: XCTestCase {
 
         // SEND!
         futureSuccess
+            .eraseToAnyPublisher()
             .dispatch(action: TestKeyedCompletableAction.self, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
         futureFailure
+            .eraseToAnyPublisher()
             .dispatch(action: TestKeyedCompletableAction.self, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
 
@@ -202,9 +206,11 @@ final class DispatcherTests: XCTestCase {
 
         // SEND!
         futureSuccess
+            .eraseToAnyPublisher()
             .dispatch(action: TestEmptyAction.self, on: dispatcher)
             .store(in: &cancellables)
         futureFailure
+            .eraseToAnyPublisher()
             .dispatch(action: TestEmptyAction.self, on: dispatcher)
             .store(in: &cancellables)
 
@@ -247,9 +253,11 @@ final class DispatcherTests: XCTestCase {
 
         // SEND!
         futureSuccess
+            .eraseToAnyPublisher()
             .dispatch(action: TestKeyedEmptyAction.self, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
         futureFailure
+            .eraseToAnyPublisher()
             .dispatch(action: TestKeyedEmptyAction.self, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
 
