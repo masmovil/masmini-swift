@@ -1,10 +1,10 @@
+import Combine
 import Foundation
 import Mini
-import RxSwift
 import XCTest
 
-class TestStoreController: Disposable {
-    public func dispose() {
+class TestStoreController: Cancellable {
+    public func cancel() {
         // NO-OP
     }
 }

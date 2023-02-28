@@ -1,17 +1,16 @@
 import Combine
 @testable import Mini
-import RxSwift
 import XCTest
 
 final class ReducerTests: XCTestCase {
     func test_dispatcher_triggers_action_in_reducer_group_reducer() {
-        let dBag = DisposeBag()
+        var cancellables = Set<AnyCancellable>()
         let dispatcher = Dispatcher()
         let store = Store<TestState, TestStoreController>(TestState(), dispatcher: dispatcher, storeController: TestStoreController())
         let expectation = XCTestExpectation(description: "Reducer")
         store
             .reducerGroup(expectation: expectation)
-            .disposed(by: dBag)
+            .store(in: &cancellables)
 
         XCTAssertTrue(store.state.counter == 0)
 
@@ -33,13 +32,13 @@ final class ReducerTests: XCTestCase {
     }
 
     func test_subscribe_to_store_receive_actions() {
-        let dBag = DisposeBag()
+        var cancellables = Set<AnyCancellable>()
         let dispatcher = Dispatcher()
         let store = Store<TestState, TestStoreController>(TestState(), dispatcher: dispatcher, storeController: TestStoreController())
         let expectation = XCTestExpectation(description: "Reducer")
         store
             .reducerGroup(expectation: expectation)
-            .disposed(by: dBag)
+            .store(in: &cancellables)
 
         XCTAssertTrue(store.state.counter == 0)
 
@@ -50,14 +49,14 @@ final class ReducerTests: XCTestCase {
     }
 
     func test_reset_state() {
-        let dBag = DisposeBag()
+        var cancellables = Set<AnyCancellable>()
         let dispatcher = Dispatcher()
         let initialState = TestState()
         let store = Store<TestState, TestStoreController>(initialState, dispatcher: dispatcher, storeController: TestStoreController())
         let expectation = XCTestExpectation(description: "Reducer")
         store
             .reducerGroup(expectation: expectation)
-            .disposed(by: dBag)
+            .store(in: &cancellables)
 
         XCTAssertTrue(store.state.counter == 0)
 
@@ -70,31 +69,7 @@ final class ReducerTests: XCTestCase {
         XCTAssert(store.state.isEqual(to: initialState))
     }
 
-    func test_subscribe_state_changes_with_rx() {
-        let dBag = DisposeBag()
-        let dispatcher = Dispatcher()
-        let initialState = TestState()
-        let store = Store<TestState, TestStoreController>(initialState, dispatcher: dispatcher, storeController: TestStoreController())
-        let expectation = XCTestExpectation(description: "Subscription Emits 1")
-
-        store
-            .reducerGroup()
-            .disposed(by: dBag)
-        store
-            .map { $0.counter }
-            .subscribe(onNext: { counter in
-                if counter == 1 {
-                    expectation.fulfill()
-                }
-            })
-            .disposed(by: dBag)
-
-        dispatcher.dispatch(TestAction(counter: 1))
-        wait(for: [expectation], timeout: 5.0)
-    }
-
-    func test_subscribe_state_changes_with_combine() {
-        let dBag = DisposeBag()
+    func test_subscribe_state_changes() {
         var cancellables = Set<AnyCancellable>()
         let dispatcher = Dispatcher()
         let initialState = TestState()
@@ -104,7 +79,8 @@ final class ReducerTests: XCTestCase {
 
         store
             .reducerGroup()
-            .disposed(by: dBag)
+            .store(in: &cancellables)
+
         store
             .map(\.counter)
             .sink { counter in
