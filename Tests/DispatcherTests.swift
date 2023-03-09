@@ -159,10 +159,10 @@ final class DispatcherTests: XCTestCase {
         let expectedError = TestError.berenjenaError
         var cancellables = Set<AnyCancellable>()
 
-        let futureSuccess = Future<Void, TestError> { promise in
-            promise(.success(()))
+        let futureSuccess = Future<None, TestError> { promise in
+            promise(.success(.none))
         }
-        let futureFailure = Future<Void, TestError> { promise in
+        let futureFailure = Future<None, TestError> { promise in
             promise(.failure(.berenjenaError))
         }
 
@@ -206,10 +206,10 @@ final class DispatcherTests: XCTestCase {
         let expectedKey = "wawa"
         var cancellables = Set<AnyCancellable>()
 
-        let futureSuccess = Future<Void, TestError> { promise in
-            promise(.success(()))
+        let futureSuccess = Future<None, TestError> { promise in
+            promise(.success(.none))
         }
-        let futureFailure = Future<Void, TestError> { promise in
+        let futureFailure = Future<None, TestError> { promise in
             promise(.failure(.berenjenaError))
         }
 

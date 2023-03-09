@@ -1,26 +1,24 @@
 import Combine
 import Foundation
 
-public extension Publisher where Output == (TaskType, TaskType) {
-    func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
+public extension Publisher where Failure == Never {
+    func combineMiniTasks<T1: TaskType, T2: TaskType>() -> Publishers.CombineMiniTasks<Self, T1.Failure>
+    where Output == (T1, T2), T1.Failure == T2.Failure {
         Publishers.CombineMiniTasks(upstream: self)
     }
-}
 
-public extension Publisher where Output == (TaskType, TaskType, TaskType) {
-    func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
+    func combineMiniTasks<T1: TaskType, T2: TaskType, T3: TaskType>() -> Publishers.CombineMiniTasks<Self, T1.Failure>
+    where Output == (T1, T2, T3), T1.Failure == T2.Failure {
         Publishers.CombineMiniTasks(upstream: self)
     }
-}
 
-public extension Publisher where Output == (TaskType, TaskType, TaskType, TaskType) {
-    func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
+    func combineMiniTasks<T1: TaskType, T2: TaskType, T3: TaskType, T4: TaskType>() -> Publishers.CombineMiniTasks<Self, T1.Failure>
+    where Output == (T1, T2, T3, T4), T1.Failure == T2.Failure {
         Publishers.CombineMiniTasks(upstream: self)
     }
-}
 
-public extension Publisher where Output == [TaskType] {
-    func combineMiniTasks() -> Publishers.CombineMiniTasks<Self> {
+    func combineMiniTasks<T: TaskType>() -> Publishers.CombineMiniTasks<Self, T.Failure>
+    where Output == [T] {
         Publishers.CombineMiniTasks(upstream: self)
     }
 }
@@ -28,8 +26,8 @@ public extension Publisher where Output == [TaskType] {
 public extension Publishers {
     /// Create a `Publisher` that connect an Upstream (Another publisher) that emits `Task` (Array or Tuples)
     /// The Output of this Publisher always is a combined `Task`
-    struct CombineMiniTasks<Upstream: Publisher>: Publisher {
-        public typealias Output = TaskType
+    struct CombineMiniTasks<Upstream: Publisher, TaskFailure: Error>: Publisher {
+        public typealias Output = EmptyTask<TaskFailure>
         public typealias Failure = Upstream.Failure
 
         public let upstream: Upstream
@@ -65,33 +63,37 @@ extension Publishers.CombineMiniTasks {
         }
 
         func receive(_ input: Input) -> Subscribers.Demand {
-            let tasks: [TaskType]
+            let tasks: [any TaskType]
             switch input {
-            case let inputTuple2 as (TaskType, TaskType):
+            case let inputTuple2 as (any TaskType, any TaskType):
                 tasks = [inputTuple2.0, inputTuple2.1]
 
-            case let inputTuple3 as (TaskType, TaskType, TaskType):
+            case let inputTuple3 as (any TaskType, any TaskType, any TaskType):
                 tasks = [inputTuple3.0, inputTuple3.1, inputTuple3.2]
 
-            case let inputTuple4 as (TaskType, TaskType, TaskType, TaskType):
+            case let inputTuple4 as (any TaskType, any TaskType, any TaskType, any TaskType):
                 tasks = [inputTuple4.0, inputTuple4.1, inputTuple4.2, inputTuple4.3]
 
-            case let inputTasks as [TaskType]:
+            case let inputTasks as [any TaskType]:
                 tasks = inputTasks
 
             default:
                 return .none
             }
 
-            if let failureTask = tasks.first(where: { $0.isFailure }) {
-                return downstream.receive(failureTask)
-            } else if tasks.map({ $0.isRunning }).contains(true) {
-                return downstream.receive(AnyTask.requestRunning())
-            } else if !tasks.map({ $0.isSuccessful }).contains(false) {
-                return downstream.receive(AnyTask.requestSuccess(()))
+            if let failureTask = tasks.first(where: { $0.isFailure }), let failure = failureTask.error as? Output.Failure {
+                return downstream.receive(.requestFailure(failure))
             }
 
-            return downstream.receive(AnyTask())
+            if tasks.map({ $0.isRunning }).contains(true) {
+                return downstream.receive(.requestRunning())
+            }
+
+            if !tasks.map({ $0.isSuccessful }).contains(false) {
+                return downstream.receive(.requestSuccess())
+            }
+
+            return downstream.receive(.requestIdle())
         }
 
         func receive(completion: Subscribers.Completion<Failure>) {

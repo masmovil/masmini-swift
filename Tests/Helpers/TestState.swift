@@ -2,10 +2,10 @@ import Foundation
 import Mini
 
 struct TestState: StateType {
-    public let testTask: Task<Void, TestError>
+    public let testTask: Task<None, TestError>
     public let counter: Int
 
-    public init(testTask: Task<Void, TestError> = .requestIdle(),
+    public init(testTask: Task<None, TestError> = .requestIdle(),
                 counter: Int = 0) {
         self.testTask = testTask
         self.counter = counter

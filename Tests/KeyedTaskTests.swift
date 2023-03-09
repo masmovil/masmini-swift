@@ -10,7 +10,7 @@ class KeyedTaskTests: XCTestCase {
     }
 
     func test_subscript() {
-        XCTAssertTrue(tasks[task: 1]?.data == "hi")
+        XCTAssertTrue(tasks[task: 1]?.payload == "hi")
         XCTAssertEqual(tasks[task: 4], nil)
     }
 

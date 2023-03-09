@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol PayloadAction {
-    associatedtype TaskPayload
+    associatedtype TaskPayload: Equatable
     associatedtype TaskError: Error
 
     var task: Task<TaskPayload, TaskError> { get }
@@ -12,7 +12,7 @@ public protocol PayloadAction {
 public protocol CompletableAction: Action & PayloadAction { }
 
 public protocol EmptyAction: Action & PayloadAction {
-    associatedtype TaskPayload = Void
+    associatedtype TaskPayload = None
 
     init(task: EmptyTask<TaskError>)
 }

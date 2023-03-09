@@ -6,7 +6,7 @@ class PublishersTests: XCTestCase {
     var taskSuccess1: Task<String, TestError> = .requestSuccess("hola")
     var taskSuccess2: Task<String, TestError> = .requestSuccess("chau")
     var taskFailure1: Task<String, TestError> = .requestFailure(.berenjenaError)
-    var taskFailure2: Task<String, TestError> = .requestFailure(.berenjenaError)
+    var taskFailure2: Task<String, TestError> = .requestFailure(.bigBerenjenaError)
     var taskRunning1: Task<String, TestError> = .requestRunning()
     var taskIdle1: Task<String, TestError> = .requestIdle()
 
@@ -35,6 +35,7 @@ class PublishersTests: XCTestCase {
             .combineMiniTasks()
             .sink { combinedTask in
                 XCTAssertTrue(combinedTask.isFailure)
+                XCTAssertEqual(combinedTask.error, .berenjenaError)
                 expectation.fulfill()
             }
             .store(in: &cancellables)
@@ -51,6 +52,7 @@ class PublishersTests: XCTestCase {
             .combineMiniTasks()
             .sink { combinedTask in
                 XCTAssertTrue(combinedTask.isFailure)
+                XCTAssertEqual(combinedTask.error, .berenjenaError)
                 expectation.fulfill()
             }
             .store(in: &cancellables)

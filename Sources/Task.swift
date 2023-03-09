@@ -1,29 +1,36 @@
 import Foundation
 
-public typealias AnyTask = Task<Any, Error>
-public typealias EmptyTask<E: Error> = Task<Void, E>
+public typealias EmptyTask<E: Error> = Task<None, E>
 
 public protocol TaskType {
+    associatedtype Payload: Equatable
+    associatedtype Failure: Error
+
     var isIdle: Bool { get }
     var isRunning: Bool { get }
     var isRecentlySucceeded: Bool { get }
     var isTerminal: Bool { get }
     var isSuccessful: Bool { get }
     var isFailure: Bool { get }
+    
+    var status: TaskStatus<Payload, Failure> { get }
+    var payload: Payload? { get }
+    var error: Failure? { get }
 }
 
-public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertible {
-    public let status: Status
+public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStringConvertible {
+    public typealias Payload = T
+    public typealias Failure = E
+    
+    public let status: TaskStatus<Payload, Failure>
     public let started: Date
-    public let expiration: Expiration
-    public let data: T?
+    public let expiration: TaskExpiration
     public let tag: String?
     public let progress: Decimal?
-    public let error: E?
 
-    public required init(status: Status = .idle,
+    public required init(status: TaskStatus<Payload, Failure> = .idle,
                          started: Date = Date(),
-                         expiration: Expiration = .immediately,
+                         expiration: TaskExpiration = .immediately,
                          tag: String? = nil,
                          progress: Decimal? = nil) {
         self.status = status
@@ -31,19 +38,25 @@ public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertibl
         self.expiration = expiration
         self.tag = tag
         self.progress = progress
-
+    }
+    
+    public var payload: Payload? {
         switch status {
         case .success(let payload):
-            self.error = nil
-            self.data = payload
-
-        case .failure(let error):
-            self.error = error
-            self.data = nil
+            return payload
 
         default:
-            self.data = nil
-            self.error = nil
+            return nil
+        }
+    }
+    
+    public var error: Failure? {
+        switch status {
+        case .failure(let error):
+            return error
+
+        default:
+            return nil
         }
     }
 
@@ -115,11 +128,11 @@ public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertibl
         .init(status: .running, tag: tag)
     }
 
-    public static func requestFailure(_ error: E, tag: String? = nil) -> Self {
+    public static func requestFailure(_ error: Failure, tag: String? = nil) -> Self {
         .init(status: .failure(error: error), tag: tag)
     }
 
-    public static func requestSuccess(_ payload: T, expiration: Expiration = .immediately, tag: String? = nil) -> Self {
+    public static func requestSuccess(_ payload: Payload, expiration: TaskExpiration = .immediately, tag: String? = nil) -> Self {
         .init(status: .success(payload: payload), expiration: expiration, tag: tag)
     }
 
@@ -134,7 +147,7 @@ public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertibl
 
         return """
         🚀 Task: status: \(status), started: \(started), tag: \(tagPrint)
-        data: \(String(describing: data)), progress: \(String(describing: progress)) error: \(String(describing: error))
+        payload: \(String(describing: payload)), progress: \(String(describing: progress)) error: \(String(describing: error))
         """
     }
 
@@ -146,8 +159,8 @@ public class Task<T, E: Error>: TaskType, Equatable, CustomDebugStringConvertibl
     }
 }
 
-public extension Task where T == Void {
-    static func requestSuccess(expiration: Expiration = .immediately, tag: String? = nil) -> Self {
-        .init(status: .success(payload: ()), expiration: expiration, tag: tag)
+public extension Task where T == None {
+    static func requestSuccess(expiration: TaskExpiration = .immediately, tag: String? = nil) -> Self {
+        .init(status: .success(payload: .none), expiration: expiration, tag: tag)
     }
 }
