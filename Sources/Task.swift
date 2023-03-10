@@ -12,7 +12,7 @@ public protocol TaskType {
     var isTerminal: Bool { get }
     var isSuccessful: Bool { get }
     var isFailure: Bool { get }
-    
+
     var status: TaskStatus<Payload, Failure> { get }
     var payload: Payload? { get }
     var error: Failure? { get }
@@ -21,7 +21,7 @@ public protocol TaskType {
 public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStringConvertible {
     public typealias Payload = T
     public typealias Failure = E
-    
+
     public let status: TaskStatus<Payload, Failure>
     public let started: Date
     public let expiration: TaskExpiration
@@ -39,7 +39,7 @@ public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStrin
         self.tag = tag
         self.progress = progress
     }
-    
+
     public var payload: Payload? {
         switch status {
         case .success(let payload):
@@ -49,7 +49,7 @@ public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStrin
             return nil
         }
     }
-    
+
     public var error: Failure? {
         switch status {
         case .failure(let error):
@@ -152,7 +152,7 @@ public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStrin
     }
 
     // MARK: Equatable
-    public static func ==<T, E> (lhs: Task<T, E>, rhs: Task<T, E>) -> Bool {
+    public static func == <T, E> (lhs: Task<T, E>, rhs: Task<T, E>) -> Bool {
         lhs.status == rhs.status &&
             lhs.started == rhs.started &&
             lhs.progress == rhs.progress

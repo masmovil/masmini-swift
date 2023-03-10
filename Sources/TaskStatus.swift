@@ -11,7 +11,7 @@ public enum TaskStatus<Payload: Equatable, Failure: Error>: Equatable {
 
         case (.success(let lhsSuccess), .success(let rhsSuccess)):
             return lhsSuccess == rhsSuccess
-            
+
         // All error must be treated as different.
         case (.failure, .failure):
             return false

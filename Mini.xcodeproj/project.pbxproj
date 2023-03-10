@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,15 +100,27 @@
 		F288761128649AFE0069790E /* AnyPublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* AnyPublisherExtensions.swift */; };
 		F288761228649AFE0069790E /* AnyPublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* AnyPublisherExtensions.swift */; };
 		F288761328649AFE0069790E /* AnyPublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288760F28649AFE0069790E /* AnyPublisherExtensions.swift */; };
-		F288761528649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
-		F288761628649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
-		F288761728649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
-		F288761828649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */; };
+		F288761528649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */; };
+		F288761628649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */; };
+		F288761728649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */; };
+		F288761828649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */; };
 		F288DCC929BA8BF600FBFED1 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCC829BA8BF600FBFED1 /* None.swift */; };
 		F288DCCA29BA8BF600FBFED1 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCC829BA8BF600FBFED1 /* None.swift */; };
 		F288DCCB29BA8BF600FBFED1 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCC829BA8BF600FBFED1 /* None.swift */; };
 		F288DCCC29BA8BF600FBFED1 /* None.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCC829BA8BF600FBFED1 /* None.swift */; };
 		F288DCCD29BA906800FBFED1 /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AD824D286B7065005C024F /* PublishersTests.swift */; };
+		F288DCCF29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */; };
+		F288DCD029BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */; };
+		F288DCD129BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */; };
+		F288DCD229BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */; };
+		F288DCD429BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */; };
+		F288DCD529BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */; };
+		F288DCD629BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */; };
+		F288DCD729BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */; };
+		F288DCD929BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */; };
+		F288DCDA29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */; };
+		F288DCDB29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */; };
+		F288DCDC29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */; };
 		F297D269286A02E200323F24 /* KeyedPayloadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D268286A02E200323F24 /* KeyedPayloadAction.swift */; };
 		F297D26A286A02E200323F24 /* KeyedPayloadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D268286A02E200323F24 /* KeyedPayloadAction.swift */; };
 		F297D26B286A02E200323F24 /* KeyedPayloadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297D268286A02E200323F24 /* KeyedPayloadAction.swift */; };
@@ -209,8 +221,11 @@
 		F222D7752525373B00672E7B /* KeyedTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedTaskTests.swift; sourceTree = "<group>"; };
 		F26C3AF722537A4600189D28 /* Mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mini.swift; sourceTree = "<group>"; };
 		F288760F28649AFE0069790E /* AnyPublisherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherExtensions.swift; sourceTree = "<group>"; };
-		F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasks.swift; sourceTree = "<group>"; };
+		F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasksTuple2.swift; sourceTree = "<group>"; };
 		F288DCC829BA8BF600FBFED1 /* None.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = None.swift; sourceTree = "<group>"; };
+		F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasksTuple4.swift; sourceTree = "<group>"; };
+		F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasksTuple3.swift; sourceTree = "<group>"; };
+		F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.CombineMiniTasksArray.swift; sourceTree = "<group>"; };
 		F297D268286A02E200323F24 /* KeyedPayloadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedPayloadAction.swift; sourceTree = "<group>"; };
 		F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatcher+Combine.swift"; sourceTree = "<group>"; };
 		F2AD8248286B6AD9005C024F /* TaskExpiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExpiration.swift; sourceTree = "<group>"; };
@@ -393,7 +408,10 @@
 			isa = PBXGroup;
 			children = (
 				F288760F28649AFE0069790E /* AnyPublisherExtensions.swift */,
-				F288761428649B1C0069790E /* Publishers.CombineMiniTasks.swift */,
+				F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */,
+				F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */,
+				F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */,
+				F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */,
 				F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */,
 			);
 			path = Combine;
@@ -573,7 +591,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = S3BA;
 				TargetAttributes = {
 					E26053ED212187FF00D013B5 = {
@@ -685,6 +703,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E20BA60521389BE0005BA13B /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -695,10 +714,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, run: brew install swiftlint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nmint run swiftlint --fix\nmint run swiftlint\n";
 		};
 		E20BA60621389BF7005BA13B /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -709,10 +729,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, run: brew install swiftlint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nmint run swiftlint --fix\nmint run swiftlint\n";
 		};
 		E260540821218AF400D013B5 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -723,7 +744,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, run: brew install swiftlint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nmint run swiftlint --fix\nmint run swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -739,12 +760,14 @@
 				F222D4BB25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B725249B7E00672E7B /* Middleware.swift in Sources */,
 				F297D27E286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
-				F288761528649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
+				F288761528649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D269286A02E200323F24 /* KeyedPayloadAction.swift in Sources */,
 				F222D4B325249B7E00672E7B /* Task.swift in Sources */,
 				F288761028649AFE0069790E /* AnyPublisherExtensions.swift in Sources */,
 				F288DCC929BA8BF600FBFED1 /* None.swift in Sources */,
 				F222D4CF25249B7E00672E7B /* Store.swift in Sources */,
+				F288DCCF29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */,
+				F288DCD429BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */,
 				F222D4FD25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F222D4C325249B7E00672E7B /* Action.swift in Sources */,
 				F222D4F525249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
@@ -753,6 +776,7 @@
 				F2AD8249286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C725249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
+				F288DCD929BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC4286B57EA009C9C8E /* TaskStatus.swift in Sources */,
 				F222D50925249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -790,12 +814,14 @@
 				F222D4BC25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B825249B7E00672E7B /* Middleware.swift in Sources */,
 				F297D27F286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
-				F288761628649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
+				F288761628649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26A286A02E200323F24 /* KeyedPayloadAction.swift in Sources */,
 				F222D4B425249B7E00672E7B /* Task.swift in Sources */,
 				F288761128649AFE0069790E /* AnyPublisherExtensions.swift in Sources */,
 				F288DCCA29BA8BF600FBFED1 /* None.swift in Sources */,
 				F222D4D025249B7E00672E7B /* Store.swift in Sources */,
+				F288DCD029BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */,
+				F288DCD529BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */,
 				F222D4FE25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F222D4C425249B7E00672E7B /* Action.swift in Sources */,
 				F222D4F625249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
@@ -804,6 +830,7 @@
 				F2AD824A286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C825249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
+				F288DCDA29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC5286B57EA009C9C8E /* TaskStatus.swift in Sources */,
 				F222D50A25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -841,12 +868,14 @@
 				F222D4BD25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B925249B7E00672E7B /* Middleware.swift in Sources */,
 				F297D280286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
-				F288761728649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
+				F288761728649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26B286A02E200323F24 /* KeyedPayloadAction.swift in Sources */,
 				F222D4B525249B7E00672E7B /* Task.swift in Sources */,
 				F288761228649AFE0069790E /* AnyPublisherExtensions.swift in Sources */,
 				F288DCCB29BA8BF600FBFED1 /* None.swift in Sources */,
 				F222D4D125249B7E00672E7B /* Store.swift in Sources */,
+				F288DCD129BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */,
+				F288DCD629BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */,
 				F222D4FF25249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F222D4C525249B7E00672E7B /* Action.swift in Sources */,
 				F222D4F725249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
@@ -855,6 +884,7 @@
 				F2AD824B286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C925249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
+				F288DCDB29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC6286B57EA009C9C8E /* TaskStatus.swift in Sources */,
 				F222D50B25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -892,12 +922,14 @@
 				F222D4BE25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4BA25249B7E00672E7B /* Middleware.swift in Sources */,
 				F297D281286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
-				F288761828649B1C0069790E /* Publishers.CombineMiniTasks.swift in Sources */,
+				F288761828649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26C286A02E200323F24 /* KeyedPayloadAction.swift in Sources */,
 				F222D4B625249B7E00672E7B /* Task.swift in Sources */,
 				F288761328649AFE0069790E /* AnyPublisherExtensions.swift in Sources */,
 				F288DCCC29BA8BF600FBFED1 /* None.swift in Sources */,
 				F222D4D225249B7E00672E7B /* Store.swift in Sources */,
+				F288DCD229BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift in Sources */,
+				F288DCD729BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift in Sources */,
 				F222D50025249B9B00672E7B /* DictionaryExtensions.swift in Sources */,
 				F222D4C625249B7E00672E7B /* Action.swift in Sources */,
 				F222D4F825249B9B00672E7B /* DispatchQueueExtensions.swift in Sources */,
@@ -906,6 +938,7 @@
 				F2AD824C286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4CA25249B7E00672E7B /* ServiceType.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
+				F288DCDC29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC7286B57EA009C9C8E /* TaskStatus.swift in Sources */,
 				F222D50C25249B9B00672E7B /* SharedDictionary.swift in Sources */,
 			);
@@ -1075,10 +1108,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1106,10 +1136,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1132,16 +1159,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1158,16 +1181,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1183,14 +1202,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1214,14 +1231,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1245,16 +1260,13 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1272,16 +1284,13 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1301,10 +1310,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1333,10 +1339,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1361,16 +1364,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1389,16 +1388,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masmovil.MiniTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1420,10 +1415,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1451,10 +1443,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

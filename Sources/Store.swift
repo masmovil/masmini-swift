@@ -1,5 +1,5 @@
-import Foundation
 import Combine
+import Foundation
 
 public protocol StoreType {
     associatedtype State: StateType
@@ -90,7 +90,7 @@ public class Store<State: StateType, StoreController: Cancellable>: Publisher, S
     public func receive<S: Subscriber>(subscriber: S) where Failure == S.Failure, Output == S.Input {
         objectWillChange.subscribe(subscriber)
     }
-    
+
     private var objectWillChange: CurrentValueSubject<State, Never>
     private let queue = DispatchQueue(label: "atomic state")
     private var _initialState: State
