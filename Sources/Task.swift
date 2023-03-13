@@ -61,23 +61,11 @@ public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStrin
     }
 
     public var isIdle: Bool {
-        switch status {
-        case .idle:
-            return true
-
-        default:
-            return false
-        }
+        status == .idle
     }
 
     public var isRunning: Bool {
-        switch status {
-        case .running:
-            return true
-
-        default:
-            return false
-        }
+        status == .running
     }
 
     public var isRecentlySucceeded: Bool {
@@ -153,9 +141,7 @@ public class Task<T: Equatable, E: Error>: TaskType, Equatable, CustomDebugStrin
 
     // MARK: Equatable
     public static func == <T, E> (lhs: Task<T, E>, rhs: Task<T, E>) -> Bool {
-        lhs.status == rhs.status &&
-            lhs.started == rhs.started &&
-            lhs.progress == rhs.progress
+        lhs.status == rhs.status
     }
 }
 

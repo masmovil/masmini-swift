@@ -197,7 +197,6 @@
 		E28124322122CC4C00E4F6D0 /* Mini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E281243A2122CC4C00E4F6D0 /* Mini-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mini-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E281244E2122CC5B00E4F6D0 /* Mini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F20396B025E7C7D1002DBD08 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		F222D4A625249B7D00672E7B /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		F222D4A725249B7D00672E7B /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F222D4A825249B7D00672E7B /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
@@ -301,7 +300,6 @@
 			children = (
 				E26053F02121880000D013B5 /* Sources */,
 				E26053FB2121880000D013B5 /* Tests */,
-				E28124592122CD2500E4F6D0 /* Frameworks */,
 				E26053EF212187FF00D013B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -360,14 +358,6 @@
 				F2C09DAA286B147F009C9C8E /* Helpers */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		E28124592122CD2500E4F6D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F20396B025E7C7D1002DBD08 /* RxSwift.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F222D4DC25249B9A00672E7B /* Utils */ = {
