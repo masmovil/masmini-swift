@@ -19,7 +19,7 @@ public struct TaskTuple2Payload<T1P: Equatable, T2P: Equatable>: TaskTuple2Paylo
     }
 }
 
-public extension Publisher where Failure == Never {
+public extension Publisher {
     func combineMiniTasks<T1: TaskType, T2: TaskType>()
     -> Publishers.CombineMiniTasksTuple2<Self, TaskTuple2Payload<T1.Payload, T2.Payload>, T1.Failure>
     where Output == (T1, T2), T1.Failure == T2.Failure {

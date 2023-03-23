@@ -1,8 +1,7 @@
 import Combine
 
-public extension Publisher where Failure == Never {
-    func eraseToEmptyTask()
-    -> Publishers.EraseToEmptyTask<Self, Output.Failure>
+public extension Publisher {
+    func eraseToEmptyTask() -> Publishers.EraseToEmptyTask<Self, Output.Failure>
     where Output: TaskType {
         Publishers.EraseToEmptyTask(upstream: self)
     }
