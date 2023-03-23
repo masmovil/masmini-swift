@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A20F7E229CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */; };
+		3A20F7E329CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */; };
+		3A20F7E429CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */; };
+		3A20F7E529CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */; };
 		E26053F82121880000D013B5 /* Mini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26053EE212187FF00D013B5 /* Mini.framework */; };
 		E26053FF2121880000D013B5 /* Mini.h in Headers */ = {isa = PBXBuildFile; fileRef = E26053F12121880000D013B5 /* Mini.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E28123E02122C2CB00E4F6D0 /* Mini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28123D72122C2CB00E4F6D0 /* Mini.framework */; };
@@ -187,6 +191,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.EraseToEmptyTask.swift; sourceTree = "<group>"; };
 		E26053EE212187FF00D013B5 /* Mini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26053F12121880000D013B5 /* Mini.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mini.h; sourceTree = "<group>"; };
 		E26053F22121880000D013B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -401,6 +406,7 @@
 				F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */,
 				F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */,
 				F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */,
+				3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */,
 				F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */,
 				F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */,
 			);
@@ -765,6 +771,7 @@
 				F26C3AF822537A4600189D28 /* Mini.swift in Sources */,
 				F2AD8249286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C725249B7E00672E7B /* ServiceType.swift in Sources */,
+				3A20F7E229CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCD929BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC4286B57EA009C9C8E /* TaskStatus.swift in Sources */,
@@ -819,6 +826,7 @@
 				F26C3AF922537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824A286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C825249B7E00672E7B /* ServiceType.swift in Sources */,
+				3A20F7E329CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDA29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC5286B57EA009C9C8E /* TaskStatus.swift in Sources */,
@@ -873,6 +881,7 @@
 				F26C3AFA22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824B286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4C925249B7E00672E7B /* ServiceType.swift in Sources */,
+				3A20F7E429CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDB29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC6286B57EA009C9C8E /* TaskStatus.swift in Sources */,
@@ -927,6 +936,7 @@
 				F26C3AFB22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824C286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F222D4CA25249B7E00672E7B /* ServiceType.swift in Sources */,
+				3A20F7E529CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDC29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
 				F2C09DC7286B57EA009C9C8E /* TaskStatus.swift in Sources */,
