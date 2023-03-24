@@ -8,9 +8,6 @@ jobs:
     runs-on: apps-ci
     timeout-minutes: 120
     steps:
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
     - name: Remove any previous hook 🥸
       run: rm -rf .git/hooks
