@@ -17,7 +17,8 @@ platform :ios do
 		sh "curl -s https://codecov.io/bash | bash -s -- -F ios -J 'Mini'"
 	end
 
-  	private_lane :test_scheme do |options|
+    desc "Pass given scheme tests"
+  	lane :test_scheme do |options|
         clear_derived_data
 
         output_directory = File.expand_path("#{ENV['WORKSPACE']}/output")
