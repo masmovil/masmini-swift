@@ -16,16 +16,3 @@ public protocol EmptyAction: Action & PayloadAction {
 
     init(task: EmptyTask<TaskError>)
 }
-
-public protocol AttributedAction: Action & PayloadAction {
-    associatedtype Attribute: Equatable
-    var attribute: Attribute { get }
-
-    init(task: Task<TaskPayload, TaskError>, attribute: Attribute)
-}
-
-extension AttributedAction {
-    public init(task: Task<TaskPayload, TaskError>) {
-        fatalError("You must use init(task:attribute:)")
-    }
-}

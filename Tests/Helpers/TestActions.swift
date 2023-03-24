@@ -89,20 +89,16 @@ class TestKeyedEmptyAction: KeyedEmptyAction {
 
 class TestAttributedAction: AttributedAction {
     typealias Attribute = String
-    typealias TaskPayload = Int
-    typealias TaskError = TestError
 
-    var task: Task<TaskPayload, TaskError>
     let attribute: Attribute
 
-    required init(task: Task<TaskPayload, TaskError>, attribute: Attribute) {
-        self.task = task
+    required init(attribute: Attribute) {
         self.attribute = attribute
     }
 
     func isEqual(to other: Action) -> Bool {
-        guard let action = other as? Self else { return false }
-        guard task == action.task, attribute == action.attribute else { return false }
+        guard let action = other as? TestAttributedAction else { return false }
+        guard attribute == action.attribute else { return false }
         return true
     }
 }
