@@ -44,7 +44,6 @@ jobs:
         flags: ios
         fail_ci_if_error: true
         name: codecov-ios
-        verbose: true
 
     - name: Run tvOS tests ⚙️
       run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-tvOS configuration:Debug name:tv
@@ -58,7 +57,6 @@ jobs:
         flags: tv
         fail_ci_if_error: true
         name: codecov-tv
-        verbose: true
 
     - name: Run mac tests ⚙️
       run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-macOS configuration:Debug name:mac
@@ -72,7 +70,6 @@ jobs:
         flags: mac
         fail_ci_if_error: true
         name: codecov-mac
-        verbose: true
 
     - name: Validate Podfile ⚙️
       run: arch -arm64 rake validate_podfile
