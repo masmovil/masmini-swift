@@ -53,7 +53,8 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./output/ios/report.junit
+        xcode: true
+        xcode_archive_path: ./output/iOS/Mini-iOS.xcresult
         flags: ios
         fail_ci_if_error: true
         name: codecov-ios
