@@ -2,7 +2,7 @@
 import XCTest
 
 final class ActionTests: XCTestCase {
-    func test_check_computed_vars() {
+    func test_actions() {
         let payloadTask = Task<String, TestError>.requestIdle()
         let emptyTask = EmptyTask<TestError>.requestRunning()
 

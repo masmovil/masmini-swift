@@ -416,13 +416,13 @@
 		F2DF4A3E26C2DBCB00C082CF /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
+				F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */,
 				F288760F28649AFE0069790E /* PublisherExtensions.swift */,
+				F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */,
 				F288761428649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift */,
 				F288DCD329BB922F00FBFED1 /* Publishers.CombineMiniTasksTuple3.swift */,
 				F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */,
 				3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */,
-				F288DCD829BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift */,
-				F297D27D286A0C6900323F24 /* Dispatcher+Combine.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
