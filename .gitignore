@@ -103,4 +103,3 @@ Carthage/Build/
 
 .DS_Store
 Brewfile.lock.json
-/output/
