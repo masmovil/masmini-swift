@@ -55,6 +55,7 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         xcode: true
         xcode_archive_path: ./output/iOS/Mini-iOS.xcresult
+        files: !fastlane/report.xml
         flags: ios
         fail_ci_if_error: true
         name: codecov-ios
@@ -67,7 +68,9 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./output/tv/report.junit
+        xcode: true
+        xcode_archive_path: ./output/tv/Mini-tvOS.xcresult
+        files: !fastlane/report.xml
         flags: tv
         fail_ci_if_error: true
         name: codecov-tv
@@ -80,7 +83,9 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./output/mac/report.junit
+        xcode: true
+        xcode_archive_path: ./output/mac/Mini-macOS.xcresult
+        files: !fastlane/report.xml
         flags: mac
         fail_ci_if_error: true
         name: codecov-mac
