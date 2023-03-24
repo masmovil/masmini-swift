@@ -3,22 +3,14 @@ on:
   pull_request:
 
 jobs:
-  discard_runnings_workflows:
-    name: Discard running workflows
-    runs-on: ubuntu-20.04
-    steps:
-
-      - name: Cancel running workflows
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
-
   build:
     name: Check build & tests
     runs-on: apps-ci
-    needs: discard_runnings_workflows
     timeout-minutes: 120
     steps:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
     - name: Remove any previous hook 🥸
       run: rm -rf .git/hooks
