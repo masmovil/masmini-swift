@@ -46,10 +46,47 @@ jobs:
     - name: Rake ⚙️
       run: arch -arm64 rake
 
-    - name: Run all tests ⚙️
-      run: arch -arm64 rake tests
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - name: Run iOS tests ⚙️
+      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-iOS configuration:Debug name:iOS
+
+    - name: Upload coverage for iOS to Codecov 📋
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        xcode: true
+        xcode_archive_path: ./output/iOS/Mini-iOS.xcresult
+        flags: ios
+        fail_ci_if_error: true
+        name: codecov-ios
+        verbose: true
+
+    - name: Run tvOS tests ⚙️
+      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-tvOS configuration:Debug name:tv
+
+    - name: Upload coverage for tvOS to Codecov 📋
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        xcode: true
+        xcode_archive_path: ./output/tv/Mini-tvOS.xcresult
+        flags: tv
+        fail_ci_if_error: true
+        name: codecov-tv
+        verbose: true
+
+    - name: Run mac tests ⚙️
+      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-macOS configuration:Debug name:mac
+
+    - name: Upload coverage for mac to Codecov 📋
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        xcode: true
+        xcode_archive_path: ./output/mac/Mini-macOS.xcresult
+        flags: mac
+        fail_ci_if_error: true
+        name: codecov-mac
+        verbose: true
 
     - name: Validate Podfile ⚙️
       run: arch -arm64 rake validate_podfile
