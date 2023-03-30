@@ -33,7 +33,7 @@ class TaskTests: XCTestCase {
     func test_check_states_for_failure_task() {
         let task = Task<String, NSError>.requestFailure(error)
 
-        XCTAssertNotEqual(task.status, .failure(error: error))
+        XCTAssertEqual(task.status, .failure(error: error))
         XCTAssertNil(task.payload)
         XCTAssertEqual(task.error, error)
 
