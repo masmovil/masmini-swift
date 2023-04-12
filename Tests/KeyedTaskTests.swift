@@ -11,7 +11,7 @@ class KeyedTaskTests: XCTestCase {
 
     var emptyTasks: KeyedEmptyTask<Int, NSError> {
         [0: .running(),
-         1: .requestSuccess(),
+         1: .success(),
          2: .failure(NSError(domain: "domain", code: 44, userInfo: nil)),
          3: .idle()]
     }
