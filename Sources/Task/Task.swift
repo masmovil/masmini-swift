@@ -193,7 +193,19 @@ public class Task<T: Equatable, E: Error & Equatable>: TaskType, Equatable, Cust
 }
 
 public extension Task where T == None {
+    static func success(started: Date = Date(),
+                        expiration: TaskExpiration = .immediately,
+                        tag: String? = nil,
+                        progress: Decimal? = nil) -> Self {
+        .init(status: .success(payload: .none),
+              started: started,
+              expiration: expiration,
+              tag: tag,
+              progress: progress)
+    }
+
+    @available(*, deprecated, renamed: "success")
     static func requestSuccess(expiration: TaskExpiration = .immediately, tag: String? = nil) -> Self {
-        .init(status: .success(payload: .none), expiration: expiration, tag: tag)
+        .success(expiration: expiration, tag: tag)
     }
 }
