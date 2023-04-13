@@ -16,7 +16,7 @@ public final class Dispatcher {
     private let internalQueue = DispatchQueue(label: "MiniSwift", qos: .userInitiated)
     private var subscriptionMap = SubscriptionMap()
     private var middleware = [Middleware]()
-    private var service = [ServiceType]()
+    private var services = [Service]()
     private let root: RootChain
     private var chain: Chain
     private var dispatching = false
@@ -51,16 +51,16 @@ public final class Dispatcher {
         }
     }
 
-    public func register(service: ServiceType) {
+    public func register(service: Service) {
         internalQueue.sync {
-            self.service.append(service)
+            self.services.append(service)
         }
     }
 
-    public func unregister(service: ServiceType) {
+    public func unregister(service: Service) {
         internalQueue.sync {
-            if let index = self.service.firstIndex(where: { service.id == $0.id }) {
-                self.service.remove(at: index)
+            if let index = self.services.firstIndex(where: { service.id == $0.id }) {
+                self.services.remove(at: index)
             }
         }
     }
@@ -125,7 +125,7 @@ public final class Dispatcher {
     internal func stateWasReplayed(state: StateType) {
         internalQueue.async { [weak self] in
             guard let self = self else { return }
-            self.service.forEach {
+            self.services.forEach {
                 $0.stateWasReplayed(state: state)
             }
         }
@@ -141,7 +141,7 @@ public final class Dispatcher {
             _ = chain.proceed(action)
             internalQueue.async { [weak self] in
                 guard let self = self else { return }
-                self.service.forEach {
+                self.services.forEach {
                     $0.perform(action, self.chain)
                 }
             }

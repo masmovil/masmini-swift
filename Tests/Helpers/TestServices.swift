@@ -2,7 +2,7 @@ import Foundation
 import Mini
 import XCTest
 
-class TestService: ServiceType {
+class TestService: Service {
     typealias TestServiceCallBack = () -> Void
 
     func stateWasReplayed(state: StateType) {

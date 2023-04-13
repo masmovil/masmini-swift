@@ -42,10 +42,10 @@
 		F222D4C425249B7E00672E7B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AB25249B7D00672E7B /* Action.swift */; };
 		F222D4C525249B7E00672E7B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AB25249B7D00672E7B /* Action.swift */; };
 		F222D4C625249B7E00672E7B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AB25249B7D00672E7B /* Action.swift */; };
-		F222D4C725249B7E00672E7B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* ServiceType.swift */; };
-		F222D4C825249B7E00672E7B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* ServiceType.swift */; };
-		F222D4C925249B7E00672E7B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* ServiceType.swift */; };
-		F222D4CA25249B7E00672E7B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* ServiceType.swift */; };
+		F222D4C725249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
+		F222D4C825249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
+		F222D4C925249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
+		F222D4CA25249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
 		F222D4CB25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
 		F222D4CC25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
 		F222D4CD25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
@@ -228,7 +228,7 @@
 		F222D4A925249B7D00672E7B /* ReducerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReducerGroup.swift; sourceTree = "<group>"; };
 		F222D4AA25249B7D00672E7B /* ActionReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionReducer.swift; sourceTree = "<group>"; };
 		F222D4AB25249B7D00672E7B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
-		F222D4AC25249B7D00672E7B /* ServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		F222D4AC25249B7D00672E7B /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F222D4AD25249B7D00672E7B /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		F222D4AE25249B7D00672E7B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F222D4E125249B9A00672E7B /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
@@ -360,7 +360,7 @@
 				F288DCC829BA8BF600FBFED1 /* None.swift */,
 				F222D4E525249B9A00672E7B /* OrderedSet.swift */,
 				F222D4A925249B7D00672E7B /* ReducerGroup.swift */,
-				F222D4AC25249B7D00672E7B /* ServiceType.swift */,
+				F222D4AC25249B7D00672E7B /* Service.swift */,
 				F222D4E625249B9A00672E7B /* SharedDictionary.swift */,
 				F222D4AD25249B7D00672E7B /* StateType.swift */,
 				F222D4AE25249B7D00672E7B /* Store.swift */,
@@ -811,7 +811,7 @@
 				F26C3AF822537A4600189D28 /* Mini.swift in Sources */,
 				F2AD8249286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1829E8472900A114EC /* Taskable.swift in Sources */,
-				F222D4C725249B7E00672E7B /* ServiceType.swift in Sources */,
+				F222D4C725249B7E00672E7B /* Service.swift in Sources */,
 				F2D0DA2229E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E229CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -871,7 +871,7 @@
 				F26C3AF922537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824A286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1929E8472900A114EC /* Taskable.swift in Sources */,
-				F222D4C825249B7E00672E7B /* ServiceType.swift in Sources */,
+				F222D4C825249B7E00672E7B /* Service.swift in Sources */,
 				F2D0DA2329E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E329CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -931,7 +931,7 @@
 				F26C3AFA22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824B286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1A29E8472900A114EC /* Taskable.swift in Sources */,
-				F222D4C925249B7E00672E7B /* ServiceType.swift in Sources */,
+				F222D4C925249B7E00672E7B /* Service.swift in Sources */,
 				F2D0DA2429E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E429CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -991,7 +991,7 @@
 				F26C3AFB22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824C286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1B29E8472900A114EC /* Taskable.swift in Sources */,
-				F222D4CA25249B7E00672E7B /* ServiceType.swift in Sources */,
+				F222D4CA25249B7E00672E7B /* Service.swift in Sources */,
 				F2D0DA2529E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E529CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
