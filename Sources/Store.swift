@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-public class Store<State: StateType, StoreController: Cancellable>: Publisher, StoreType {
+public class Store<State: StateType, StoreController: Cancellable>: Publisher {
     public typealias Output = State
     public typealias Failure = Never
     public typealias State = State
@@ -37,6 +37,23 @@ public class Store<State: StateType, StoreController: Cancellable>: Publisher, S
         self.state = _initialState
     }
 
+    /**
+     Property responsible of reduce the `State` given a certain `Action` being triggered.
+     ```
+     public var reducerGroup: ReducerGroup {
+        ReducerGroup {[
+            Reducer(of: SomeAction.self, on: self.dispatcher) { (action: SomeAction)
+                self.state = myCoolNewState
+            },
+            Reducer(of: OtherAction.self, on: self.dispatcher) { (action: OtherAction)
+                // Needed work
+                self.state = myAnotherState
+                }
+            }
+        ]}
+     ```
+     - Note : The property has a default implementation which complies with the @_functionBuilder's current limitations, where no empty blocks can be produced in this iteration.
+     */
     public var reducerGroup: ReducerGroup {
         ReducerGroup {
             []

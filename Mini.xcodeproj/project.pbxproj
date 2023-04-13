@@ -177,10 +177,6 @@
 		F2D0DA1E29E8473700A114EC /* EmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1C29E8473700A114EC /* EmptyTask.swift */; };
 		F2D0DA1F29E8473700A114EC /* EmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1C29E8473700A114EC /* EmptyTask.swift */; };
 		F2D0DA2029E8473700A114EC /* EmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1C29E8473700A114EC /* EmptyTask.swift */; };
-		F2D0DA2229E84E5300A114EC /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA2129E84E5300A114EC /* StoreType.swift */; };
-		F2D0DA2329E84E5300A114EC /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA2129E84E5300A114EC /* StoreType.swift */; };
-		F2D0DA2429E84E5300A114EC /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA2129E84E5300A114EC /* StoreType.swift */; };
-		F2D0DA2529E84E5300A114EC /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA2129E84E5300A114EC /* StoreType.swift */; };
 		F2DF4A2B26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2C26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
 		F2DF4A2D26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */; };
@@ -265,7 +261,6 @@
 		F2C09DC3286B57EA009C9C8E /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
 		F2D0DA1729E8472900A114EC /* Taskable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taskable.swift; sourceTree = "<group>"; };
 		F2D0DA1C29E8473700A114EC /* EmptyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTask.swift; sourceTree = "<group>"; };
-		F2D0DA2129E84E5300A114EC /* StoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
 		F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDictionaryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,7 +359,6 @@
 				F222D4E625249B9A00672E7B /* SharedDictionary.swift */,
 				F222D4AD25249B7D00672E7B /* StateType.swift */,
 				F222D4AE25249B7D00672E7B /* Store.swift */,
-				F2D0DA2129E84E5300A114EC /* StoreType.swift */,
 				F227FD7F29CDB38D00F1E801 /* Actions */,
 				F2DF4A3E26C2DBCB00C082CF /* Publishers */,
 				F222D4E025249B9A00672E7B /* Extensions */,
@@ -812,7 +806,6 @@
 				F2AD8249286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1829E8472900A114EC /* Taskable.swift in Sources */,
 				F222D4C725249B7E00672E7B /* Service.swift in Sources */,
-				F2D0DA2229E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E229CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCD929BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
@@ -872,7 +865,6 @@
 				F2AD824A286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1929E8472900A114EC /* Taskable.swift in Sources */,
 				F222D4C825249B7E00672E7B /* Service.swift in Sources */,
-				F2D0DA2329E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E329CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDA29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
@@ -932,7 +924,6 @@
 				F2AD824B286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1A29E8472900A114EC /* Taskable.swift in Sources */,
 				F222D4C925249B7E00672E7B /* Service.swift in Sources */,
-				F2D0DA2429E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E429CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDB29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
@@ -992,7 +983,6 @@
 				F2AD824C286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1B29E8472900A114EC /* Taskable.swift in Sources */,
 				F222D4CA25249B7E00672E7B /* Service.swift in Sources */,
-				F2D0DA2529E84E5300A114EC /* StoreType.swift in Sources */,
 				3A20F7E529CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
 				F288DCDC29BB942100FBFED1 /* Publishers.CombineMiniTasksArray.swift in Sources */,
