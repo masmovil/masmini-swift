@@ -124,7 +124,7 @@ final class DispatcherTests: XCTestCase {
             .subscribe { (action: TestKeyedCompletableAction) in
                 switch action.task.status {
                 case .success(let payload) where action.key == expectedKey:
-                    if payload == expectedPayload {
+                    if payload == expectedPayload, action.task.expiration == .long {
                         expectationSuccess.fulfill()
                     }
 
@@ -141,10 +141,10 @@ final class DispatcherTests: XCTestCase {
 
         // SEND!
         futureSuccess
-            .dispatch(action: TestKeyedCompletableAction.self, key: expectedKey, on: dispatcher)
+            .dispatch(action: TestKeyedCompletableAction.self, expiration: .long, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
         futureFailure
-            .dispatch(action: TestKeyedCompletableAction.self, key: expectedKey, on: dispatcher)
+            .dispatch(action: TestKeyedCompletableAction.self, expiration: .long, key: expectedKey, on: dispatcher)
             .store(in: &cancellables)
 
         waitForExpectations(timeout: 10)
