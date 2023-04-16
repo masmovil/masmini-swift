@@ -5,7 +5,7 @@ import XCTest
 class TestService: Service {
     typealias TestServiceCallBack = () -> Void
 
-    func stateWasReplayed(state: StateType) {
+    func stateWasReplayed(state: any State) {
         onStateReplayed?()
     }
 

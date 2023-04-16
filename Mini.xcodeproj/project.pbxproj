@@ -46,10 +46,10 @@
 		F222D4C825249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
 		F222D4C925249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
 		F222D4CA25249B7E00672E7B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AC25249B7D00672E7B /* Service.swift */; };
-		F222D4CB25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
-		F222D4CC25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
-		F222D4CD25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
-		F222D4CE25249B7E00672E7B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* StateType.swift */; };
+		F222D4CB25249B7E00672E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* State.swift */; };
+		F222D4CC25249B7E00672E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* State.swift */; };
+		F222D4CD25249B7E00672E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* State.swift */; };
+		F222D4CE25249B7E00672E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AD25249B7D00672E7B /* State.swift */; };
 		F222D4CF25249B7E00672E7B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AE25249B7D00672E7B /* Store.swift */; };
 		F222D4D025249B7E00672E7B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AE25249B7D00672E7B /* Store.swift */; };
 		F222D4D125249B7E00672E7B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222D4AE25249B7D00672E7B /* Store.swift */; };
@@ -225,7 +225,7 @@
 		F222D4AA25249B7D00672E7B /* ActionReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionReducer.swift; sourceTree = "<group>"; };
 		F222D4AB25249B7D00672E7B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F222D4AC25249B7D00672E7B /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		F222D4AD25249B7D00672E7B /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		F222D4AD25249B7D00672E7B /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		F222D4AE25249B7D00672E7B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F222D4E125249B9A00672E7B /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		F222D4E325249B9A00672E7B /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 				F222D4A925249B7D00672E7B /* ReducerGroup.swift */,
 				F222D4AC25249B7D00672E7B /* Service.swift */,
 				F222D4E625249B9A00672E7B /* SharedDictionary.swift */,
-				F222D4AD25249B7D00672E7B /* StateType.swift */,
+				F222D4AD25249B7D00672E7B /* State.swift */,
 				F222D4AE25249B7D00672E7B /* Store.swift */,
 				F227FD7F29CDB38D00F1E801 /* Actions */,
 				F2DF4A3E26C2DBCB00C082CF /* Publishers */,
@@ -782,7 +782,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F222D50525249B9B00672E7B /* OrderedSet.swift in Sources */,
-				F222D4CB25249B7E00672E7B /* StateType.swift in Sources */,
+				F222D4CB25249B7E00672E7B /* State.swift in Sources */,
 				F222D76A2525361700672E7B /* KeyedTask.swift in Sources */,
 				F222D4AF25249B7E00672E7B /* Dispatcher.swift in Sources */,
 				F222D4BB25249B7E00672E7B /* ReducerGroup.swift in Sources */,
@@ -841,7 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F222D50625249B9B00672E7B /* OrderedSet.swift in Sources */,
-				F222D4CC25249B7E00672E7B /* StateType.swift in Sources */,
+				F222D4CC25249B7E00672E7B /* State.swift in Sources */,
 				F222D76B2525361700672E7B /* KeyedTask.swift in Sources */,
 				F222D4B025249B7E00672E7B /* Dispatcher.swift in Sources */,
 				F222D4BC25249B7E00672E7B /* ReducerGroup.swift in Sources */,
@@ -900,7 +900,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F222D50725249B9B00672E7B /* OrderedSet.swift in Sources */,
-				F222D4CD25249B7E00672E7B /* StateType.swift in Sources */,
+				F222D4CD25249B7E00672E7B /* State.swift in Sources */,
 				F222D76C2525361700672E7B /* KeyedTask.swift in Sources */,
 				F222D4B125249B7E00672E7B /* Dispatcher.swift in Sources */,
 				F222D4BD25249B7E00672E7B /* ReducerGroup.swift in Sources */,
@@ -959,7 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F222D50825249B9B00672E7B /* OrderedSet.swift in Sources */,
-				F222D4CE25249B7E00672E7B /* StateType.swift in Sources */,
+				F222D4CE25249B7E00672E7B /* State.swift in Sources */,
 				F222D76D2525361700672E7B /* KeyedTask.swift in Sources */,
 				F222D4B225249B7E00672E7B /* Dispatcher.swift in Sources */,
 				F222D4BE25249B7E00672E7B /* ReducerGroup.swift in Sources */,
