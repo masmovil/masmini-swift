@@ -19,27 +19,27 @@ final class DispatcherTests: XCTestCase {
         XCTAssert(dispatcher.subscriptionCount == 0)
     }
 
-    func test_add_remove_service() {
+    func test_add_remove_interceptor() {
         let expectation = XCTestExpectation(description: "Perform Action check")
         let dispatcher = Dispatcher()
-        let service = TestService(onPerfomAction: { expectation.fulfill() })
-        dispatcher.register(service: service)
+        let interceptor = TestInterceptor(onPerfomAction: { expectation.fulfill() })
+        dispatcher.register(interceptor: interceptor)
 
-        XCTAssert(service.actions.isEmpty == true)
+        XCTAssert(interceptor.actions.isEmpty == true)
 
         dispatcher.dispatch(TestAction(counter: 1))
 
         wait(for: [expectation], timeout: 5.0)
 
-        XCTAssert(service.actions.count == 1)
-        XCTAssert(service.actions.contains { $0 is TestAction } == true)
+        XCTAssert(interceptor.actions.count == 1)
+        XCTAssert(interceptor.actions.contains { $0 is TestAction } == true)
 
-        dispatcher.unregister(service: service)
-        service.actions.removeAll()
+        dispatcher.unregister(interceptor: interceptor)
+        interceptor.actions.removeAll()
 
         dispatcher.dispatch(TestAction(counter: 1))
 
-        XCTAssert(service.actions.isEmpty == true)
+        XCTAssert(interceptor.actions.isEmpty == true)
     }
 
     func test_replay_state() {
@@ -47,8 +47,8 @@ final class DispatcherTests: XCTestCase {
         let dispatcher = Dispatcher()
         let initialState = TestState()
         let store = Store<TestState, TestStoreController>(initialState, dispatcher: dispatcher, storeController: TestStoreController())
-        let service = TestService(onStateReplayed: { expectation.fulfill() })
-        dispatcher.register(service: service)
+        let interceptor = TestInterceptor(onStateReplayed: { expectation.fulfill() })
+        dispatcher.register(interceptor: interceptor)
 
         store.replayOnce()
 

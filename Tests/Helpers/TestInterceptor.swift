@@ -2,8 +2,8 @@ import Foundation
 import Mini
 import XCTest
 
-class TestService: Service {
-    typealias TestServiceCallBack = () -> Void
+class TestInterceptor: Interceptor {
+    typealias TestInterceptorCallBack = () -> Void
 
     func stateWasReplayed(state: any State) {
         onStateReplayed?()
@@ -13,16 +13,16 @@ class TestService: Service {
 
     var actions = [Action]()
 
-    private let onStateReplayed: TestServiceCallBack?
-    private let onPerfomAction: TestServiceCallBack?
+    private let onStateReplayed: TestInterceptorCallBack?
+    private let onPerfomAction: TestInterceptorCallBack?
 
-    init(onStateReplayed: TestServiceCallBack? = nil,
-         onPerfomAction: TestServiceCallBack? = nil) {
+    init(onStateReplayed: TestInterceptorCallBack? = nil,
+         onPerfomAction: TestInterceptorCallBack? = nil) {
         self.onStateReplayed = onStateReplayed
         self.onPerfomAction = onPerfomAction
     }
 
-    var perform: ServiceChain {
+    var perform: InterceptorChain {
         { action, _ -> Void in
             self.actions.append(action)
             self.onPerfomAction?()
