@@ -63,7 +63,7 @@ public class Store<StoreState: State, StoreController: Cancellable>: Publisher {
 
     /// Exposes a passthrough publisher for the Store. 
     /// Doesn’t have an initial value or a buffer of the most recently-published state.
-    public lazy var passthroughPublisher: PassthroughStorePublisher = {
+    public lazy var passthrough: PassthroughStorePublisher = {
         .init(statePassthroughSubject: statePassthroughSubject)
     }()
 

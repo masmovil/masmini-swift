@@ -131,7 +131,7 @@ final class ReducerTests: XCTestCase {
             // Subscribe through passthrough publisher and bypass the buffer from the store.
             // Only gets the action with counter == 2.
             store
-                .passthroughPublisher
+                .passthrough
                 .map(\.counter)
                 .sink { counter in
                     if counter == 1 {
@@ -143,6 +143,7 @@ final class ReducerTests: XCTestCase {
                 }
                 .store(in: &cancellables)
 
+            // Send action with counter == 2, this action should be catched by the two subscriptions
             dispatcher.dispatch(TestAction(counter: 2))
         }
 
