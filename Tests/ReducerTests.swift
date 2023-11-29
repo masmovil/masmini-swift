@@ -143,7 +143,7 @@ final class ReducerTests: XCTestCase {
                 }
                 .store(in: &cancellables)
 
-            // Send action with counter == 2, this action should be catched by the two subscriptions
+            // Send action with counter == 2, this action should be caught by the two subscriptions
             dispatcher.dispatch(TestAction(counter: 2))
         }
 
