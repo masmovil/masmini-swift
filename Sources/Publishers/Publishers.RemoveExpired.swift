@@ -8,8 +8,8 @@ public extension Publisher {
 }
 
 public extension Publishers {
-    /// Create a `Publisher` that connect an Upstream (Another publisher) that type erases `Task`s to `EmptyTask`
-    /// The Output of this `Publisher` always is a combined `EmptyTask`
+    /// Create a `Publisher` that connect an Upstream (Another publisher) that filter any expired task received
+    /// The Output of this `Publisher` is the same of the Upstream.
     struct RemoveExpired<Upstream: Publisher>: Publisher where Upstream.Output: Taskable {
         public typealias Output = Upstream.Output
         public typealias Failure = Upstream.Failure
