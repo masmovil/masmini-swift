@@ -173,6 +173,10 @@
 		F2C09DC5286B57EA009C9C8E /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* TaskStatus.swift */; };
 		F2C09DC6286B57EA009C9C8E /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* TaskStatus.swift */; };
 		F2C09DC7286B57EA009C9C8E /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C09DC3286B57EA009C9C8E /* TaskStatus.swift */; };
+		F2CDC8852B1F4567004E1AFC /* Publishers.Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */; };
+		F2CDC8862B1F4567004E1AFC /* Publishers.Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */; };
+		F2CDC8872B1F4567004E1AFC /* Publishers.Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */; };
+		F2CDC8882B1F4567004E1AFC /* Publishers.Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */; };
 		F2D0DA1829E8472900A114EC /* Taskable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1729E8472900A114EC /* Taskable.swift */; };
 		F2D0DA1929E8472900A114EC /* Taskable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1729E8472900A114EC /* Taskable.swift */; };
 		F2D0DA1A29E8472900A114EC /* Taskable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0DA1729E8472900A114EC /* Taskable.swift */; };
@@ -264,6 +268,7 @@
 		F2C09DBB286B2698009C9C8E /* TestStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStoreController.swift; sourceTree = "<group>"; };
 		F2C09DBF286B530D009C9C8E /* ActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTests.swift; sourceTree = "<group>"; };
 		F2C09DC3286B57EA009C9C8E /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
+		F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.Scope.swift; sourceTree = "<group>"; };
 		F2D0DA1729E8472900A114EC /* Taskable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taskable.swift; sourceTree = "<group>"; };
 		F2D0DA1C29E8473700A114EC /* EmptyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTask.swift; sourceTree = "<group>"; };
 		F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDictionaryTests.swift; sourceTree = "<group>"; };
@@ -447,6 +452,7 @@
 				F288DCCE29BB922700FBFED1 /* Publishers.CombineMiniTasksTuple4.swift */,
 				3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */,
 				F297F4512B1A313200B7B1FA /* Publishers.RemoveExpired.swift */,
+				F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -794,6 +800,7 @@
 				F222D4BB25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B725249B7E00672E7B /* Chain.swift in Sources */,
 				F297D27E286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
+				F2CDC8852B1F4567004E1AFC /* Publishers.Scope.swift in Sources */,
 				F288761528649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D269286A02E200323F24 /* KeyedAction.swift in Sources */,
 				F227FD8729CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */,
@@ -854,6 +861,7 @@
 				F222D4BC25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B825249B7E00672E7B /* Chain.swift in Sources */,
 				F297D27F286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
+				F2CDC8862B1F4567004E1AFC /* Publishers.Scope.swift in Sources */,
 				F288761628649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26A286A02E200323F24 /* KeyedAction.swift in Sources */,
 				F227FD8829CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */,
@@ -914,6 +922,7 @@
 				F222D4BD25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4B925249B7E00672E7B /* Chain.swift in Sources */,
 				F297D280286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
+				F2CDC8872B1F4567004E1AFC /* Publishers.Scope.swift in Sources */,
 				F288761728649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26B286A02E200323F24 /* KeyedAction.swift in Sources */,
 				F227FD8929CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */,
@@ -974,6 +983,7 @@
 				F222D4BE25249B7E00672E7B /* ReducerGroup.swift in Sources */,
 				F222D4BA25249B7E00672E7B /* Chain.swift in Sources */,
 				F297D281286A0C6900323F24 /* Dispatcher+Combine.swift in Sources */,
+				F2CDC8882B1F4567004E1AFC /* Publishers.Scope.swift in Sources */,
 				F288761828649B1C0069790E /* Publishers.CombineMiniTasksTuple2.swift in Sources */,
 				F297D26C286A02E200323F24 /* KeyedAction.swift in Sources */,
 				F227FD8A29CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */,
