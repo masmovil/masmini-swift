@@ -104,19 +104,19 @@
 		F227FD8829CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227FD8629CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift */; };
 		F227FD8929CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227FD8629CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift */; };
 		F227FD8A29CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F227FD8629CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift */; };
-		F23E2A502C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */; };
-		F23E2A512C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */; };
-		F23E2A522C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */; };
-		F23E2A532C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */; };
+		F23E2A502C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */; };
+		F23E2A512C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */; };
+		F23E2A522C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */; };
+		F23E2A532C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */; };
 		F23E2A592C57C128009544D7 /* TestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A542C57C119009544D7 /* TestPayload.swift */; };
 		F23E2A5A2C57C129009544D7 /* TestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A542C57C119009544D7 /* TestPayload.swift */; };
 		F23E2A5B2C57C12A009544D7 /* TestPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A542C57C119009544D7 /* TestPayload.swift */; };
 		F23E2A5D2C57DE73009544D7 /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A5C2C57DE73009544D7 /* PublishersTests.swift */; };
 		F23E2A5E2C57DE73009544D7 /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A5C2C57DE73009544D7 /* PublishersTests.swift */; };
 		F23E2A5F2C57DE73009544D7 /* PublishersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A5C2C57DE73009544D7 /* PublishersTests.swift */; };
-		F23E2A612C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift */; };
-		F23E2A622C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift */; };
-		F23E2A632C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift */; };
+		F23E2A612C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift */; };
+		F23E2A622C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift */; };
+		F23E2A632C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A602C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift */; };
 		F23E2A652C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A642C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift */; };
 		F23E2A662C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A642C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift */; };
 		F23E2A672C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E2A642C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift */; };
@@ -268,10 +268,10 @@
 		F222D7752525373B00672E7B /* KeyedTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedTaskTests.swift; sourceTree = "<group>"; };
 		F227FD8029CDB3F800F1E801 /* AttributedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedAction.swift; sourceTree = "<group>"; };
 		F227FD8629CDEBAE00F1E801 /* PublisherExtensions+EmptyActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublisherExtensions+EmptyActions.swift"; sourceTree = "<group>"; };
-		F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.FlatMapIdentifiableTask.swift; sourceTree = "<group>"; };
+		F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.MapToLatestTask.swift; sourceTree = "<group>"; };
 		F23E2A542C57C119009544D7 /* TestPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPayload.swift; sourceTree = "<group>"; };
 		F23E2A5C2C57DE73009544D7 /* PublishersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishersTests.swift; sourceTree = "<group>"; };
-		F23E2A602C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishersTests+FlatMapIdentifiableTask.swift"; sourceTree = "<group>"; };
+		F23E2A602C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishersTests+MapToLatestTask.swift"; sourceTree = "<group>"; };
 		F23E2A642C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishersTests+EraseToEmptyTask.swift"; sourceTree = "<group>"; };
 		F23E2A682C57DF45009544D7 /* PublishersTests+RemoveExpired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishersTests+RemoveExpired.swift"; sourceTree = "<group>"; };
 		F26C3AF722537A4600189D28 /* Mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mini.swift; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 				F2AD824D286B7065005C024F /* PublishersTests+CombineMiniTasks.swift */,
 				F23E2A642C57DEC5009544D7 /* PublishersTests+EraseToEmptyTask.swift */,
 				F23E2A682C57DF45009544D7 /* PublishersTests+RemoveExpired.swift */,
-				F23E2A602C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift */,
+				F23E2A602C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift */,
 				F222D52125249BD900672E7B /* ReducerTests.swift */,
 				F2DF4A2A26C2B69A00C082CF /* SharedDictionaryTests.swift */,
 				F222D52325249BD900672E7B /* TaskTests.swift */,
@@ -483,7 +483,7 @@
 				3A20F7E129CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift */,
 				F297F4512B1A313200B7B1FA /* Publishers.RemoveExpired.swift */,
 				F2CDC8842B1F4567004E1AFC /* Publishers.Scope.swift */,
-				F23E2A4F2C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift */,
+				F23E2A4F2C57BFDF009544D7 /* Publishers.MapToLatestTask.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -850,7 +850,7 @@
 				F26C3AF822537A4600189D28 /* Mini.swift in Sources */,
 				F2AD8249286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1829E8472900A114EC /* Taskable.swift in Sources */,
-				F23E2A502C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A502C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */,
 				F222D4C725249B7E00672E7B /* Interceptor.swift in Sources */,
 				3A20F7E229CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50125249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -878,7 +878,7 @@
 				F222D52F25249BD900672E7B /* DispatcherTests.swift in Sources */,
 				F2C09DC0286B530D009C9C8E /* ActionTests.swift in Sources */,
 				F222D7762525373B00672E7B /* KeyedTaskTests.swift in Sources */,
-				F23E2A612C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A612C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */,
 				F2C09DAC286B1490009C9C8E /* TestError.swift in Sources */,
 				F2DF4A2B26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */,
 				F2C09DB4286B1598009C9C8E /* TestInterceptor.swift in Sources */,
@@ -917,7 +917,7 @@
 				F26C3AF922537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824A286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1929E8472900A114EC /* Taskable.swift in Sources */,
-				F23E2A512C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A512C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */,
 				F222D4C825249B7E00672E7B /* Interceptor.swift in Sources */,
 				3A20F7E329CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50225249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -945,7 +945,7 @@
 				F222D53025249BD900672E7B /* DispatcherTests.swift in Sources */,
 				F2C09DC1286B530D009C9C8E /* ActionTests.swift in Sources */,
 				F222D7772525373B00672E7B /* KeyedTaskTests.swift in Sources */,
-				F23E2A622C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A622C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */,
 				F2C09DAD286B1490009C9C8E /* TestError.swift in Sources */,
 				F2DF4A2C26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */,
 				F2C09DB5286B1598009C9C8E /* TestInterceptor.swift in Sources */,
@@ -984,7 +984,7 @@
 				F26C3AFA22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824B286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1A29E8472900A114EC /* Taskable.swift in Sources */,
-				F23E2A522C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A522C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */,
 				F222D4C925249B7E00672E7B /* Interceptor.swift in Sources */,
 				3A20F7E429CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50325249B9B00672E7B /* PayloadAction.swift in Sources */,
@@ -1012,7 +1012,7 @@
 				F222D53125249BD900672E7B /* DispatcherTests.swift in Sources */,
 				F2C09DC2286B530D009C9C8E /* ActionTests.swift in Sources */,
 				F222D7782525373B00672E7B /* KeyedTaskTests.swift in Sources */,
-				F23E2A632C57DEBC009544D7 /* PublishersTests+FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A632C57DEBC009544D7 /* PublishersTests+MapToLatestTask.swift in Sources */,
 				F2C09DAE286B1490009C9C8E /* TestError.swift in Sources */,
 				F2DF4A2D26C2B69A00C082CF /* SharedDictionaryTests.swift in Sources */,
 				F2C09DB6286B1598009C9C8E /* TestInterceptor.swift in Sources */,
@@ -1051,7 +1051,7 @@
 				F26C3AFB22537A4600189D28 /* Mini.swift in Sources */,
 				F2AD824C286B6AD9005C024F /* TaskExpiration.swift in Sources */,
 				F2D0DA1B29E8472900A114EC /* Taskable.swift in Sources */,
-				F23E2A532C57BFDF009544D7 /* Publishers.FlatMapIdentifiableTask.swift in Sources */,
+				F23E2A532C57BFDF009544D7 /* Publishers.MapToLatestTask.swift in Sources */,
 				F222D4CA25249B7E00672E7B /* Interceptor.swift in Sources */,
 				3A20F7E529CCAC5500DDCF8D /* Publishers.EraseToEmptyTask.swift in Sources */,
 				F222D50425249B9B00672E7B /* PayloadAction.swift in Sources */,
