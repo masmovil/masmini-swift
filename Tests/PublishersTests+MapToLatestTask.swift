@@ -18,7 +18,7 @@ extension PublishersTests {
         let internalSubject = PassthroughSubject<Task<String, TestError>, Never>()
 
         triggerSubject
-            .flatMapIdentifiableTask { _ in
+            .mapToLatestTask { _ in
                 return internalSubject
                     .eraseToAnyPublisher()
             }
@@ -61,7 +61,7 @@ extension PublishersTests {
         expectation.expectedFulfillmentCount = 1
 
         Just(taskIdentifiableSuccess1) // Emits a task with an Id="uno"
-            .flatMapIdentifiableTask { id in
+            .mapToLatestTask { id in
                 return Just(self.taskSuccess(value: id)) // This task concats success with received value (id)
                     .eraseToAnyPublisher()
             }
@@ -83,7 +83,7 @@ extension PublishersTests {
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
 
         Just(taskIdentifiableSuccess1) // Emits a task with an Id="uno"
-            .flatMapIdentifiableTask { _ in
+            .mapToLatestTask { _ in
                 return subject
                     .eraseToAnyPublisher()
             }
@@ -107,7 +107,7 @@ extension PublishersTests {
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
 
         Just(taskIdentifiableFailure1)
-            .flatMapIdentifiableTask { _ in
+            .mapToLatestTask { _ in
                 return subject
                     .eraseToAnyPublisher()
             }
@@ -132,7 +132,7 @@ extension PublishersTests {
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
 
         Just(taskIdentifiableRunning1)
-            .flatMapIdentifiableTask { _ in
+            .mapToLatestTask { _ in
                 return subject
                     .eraseToAnyPublisher()
             }
@@ -157,7 +157,7 @@ extension PublishersTests {
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
 
         Just(taskIdentifiableIdle1)
-            .flatMapIdentifiableTask { _ in
+            .mapToLatestTask { _ in
                 return subject
                     .eraseToAnyPublisher()
             }
@@ -170,6 +170,57 @@ extension PublishersTests {
         // These changes are omited because the trigger task is on a failure state
         subject.send(taskSuccess1)
         subject.send(taskSuccess2)
+
+        waitForExpectations(timeout: 2)
+    }
+
+    func test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_idle22() {
+        var cancellables = Set<AnyCancellable>()
+        let expectationSuccess = expectation(description: "wait for async process - Success")
+        expectationSuccess.expectedFulfillmentCount = 2
+        let expectationFailure = expectation(description: "wait for async process - Failure")
+        expectationFailure.expectedFulfillmentCount = 3
+        let expectationRunning = expectation(description: "wait for async process - Running")
+        expectationRunning.expectedFulfillmentCount = 1
+        let expectationIdle = expectation(description: "wait for async process - Idle")
+        expectationIdle.expectedFulfillmentCount = 1
+
+        let triggerSubject = PassthroughSubject<Task<TestPayload, TestError>, Never>()
+        let internalSubject = PassthroughSubject<KeyedTask<String, String, TestError>, Never>()
+
+        let publisher: AnyPublisher<Task<String, TestError>, Never> = triggerSubject
+            .mapToLatestTask {
+                return internalSubject
+                    .eraseToAnyPublisher()
+            }
+
+        publisher
+            .sink { task in
+                switch task.status {
+                case .success:
+                    expectationSuccess.fulfill()
+
+                case .idle:
+                    expectationIdle.fulfill()
+
+                case .failure:
+                    expectationFailure.fulfill()
+
+                case .running:
+                    expectationRunning.fulfill()
+                }
+            }
+            .store(in: &cancellables)
+
+        triggerSubject.send(taskIdentifiableIdle1) // Pass- Hit IDLE!
+        triggerSubject.send(taskIdentifiableRunning1) // Pass- Hit RUNNING!
+        triggerSubject.send(taskIdentifiableSuccess1) // Connect subject "uno"
+        internalSubject.send(tasks) // Hit SUCCESS!
+        triggerSubject.send(taskIdentifiableFailure1) // Pass- Hit FAILURE!
+        triggerSubject.send(taskIdentifiableFailure2) // Pass- Hit FAILURE!
+        internalSubject.send(tasks) // Ignored
+        triggerSubject.send(taskIdentifiableSuccess2)  // Connect subject "dos"
+        internalSubject.send(tasks) // Hit ERROR! (key not present in KeyedTask)
 
         waitForExpectations(timeout: 2)
     }

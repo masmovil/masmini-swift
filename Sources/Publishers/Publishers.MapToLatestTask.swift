@@ -1,15 +1,18 @@
 import Combine
 
 public extension Publisher {
-    func flatMapIdentifiableTask<NewTask>(
-        transform: @escaping ((Output.Payload.ID) -> (AnyPublisher<NewTask, Failure>))
-    ) -> AnyPublisher<NewTask, Failure>
-    where
-        Output: Taskable, Output.Payload: Identifiable, NewTask: Taskable, NewTask.Failure == Output.Failure {
-        map { (task: Output) -> AnyPublisher<NewTask, Failure> in
+    func mapToLatestTask<DownTask>(
+        transform: @escaping ((Output.Payload.ID) -> (AnyPublisher<DownTask, Failure>))
+    )
+    -> AnyPublisher<DownTask, Failure>
+    where Output: Taskable & Equatable, Output.Payload: Identifiable,
+          DownTask: Taskable & Equatable, DownTask.Failure == Output.Failure {
+        map { (task: Output) -> AnyPublisher<DownTask, Failure> in
             switch task.status {
             case .success(let payload):
                 return transform(payload.id)
+                    .removeDuplicates()
+                    .eraseToAnyPublisher()
 
             case .idle:
                 return Just(.idle())
