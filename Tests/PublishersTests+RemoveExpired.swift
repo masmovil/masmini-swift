@@ -5,7 +5,7 @@ import XCTest
 extension PublishersTests {
     func test_remove_expired() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process - remove expired")
+        let expectation = expectation(description: "test_remove_expired")
         expectation.expectedFulfillmentCount = 1
 
         let subject = PassthroughSubject<Task<String, TestError>, Never>()

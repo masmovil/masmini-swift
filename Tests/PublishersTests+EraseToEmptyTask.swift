@@ -7,7 +7,7 @@ extension PublishersTests {
 
     func test_erase_to_empty_task_when_task_is_idle() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_erase_to_empty_task_when_task_is_idle")
         expectation.expectedFulfillmentCount = 1
 
         Just(taskIdle1)
@@ -23,7 +23,7 @@ extension PublishersTests {
 
     func test_erase_to_empty_task_when_task_is_running() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_erase_to_empty_task_when_task_is_running")
         expectation.expectedFulfillmentCount = 1
 
         Just(taskRunning1)
@@ -39,7 +39,7 @@ extension PublishersTests {
 
     func test_erase_to_empty_task_when_task_is_success() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_erase_to_empty_task_when_task_is_success")
         expectation.expectedFulfillmentCount = 1
 
         Just(taskSuccess1)
@@ -55,7 +55,7 @@ extension PublishersTests {
 
     func test_erase_to_empty_task_when_task_is_failure() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_erase_to_empty_task_when_task_is_failure")
         expectation.expectedFulfillmentCount = 1
 
         Just(taskFailure1)

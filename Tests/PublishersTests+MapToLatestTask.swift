@@ -57,7 +57,7 @@ extension PublishersTests {
 
     func test_flatmap_identifiable_task_to_success_when_original_task_is_success() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_flatmap_identifiable_task_to_success_when_original_task_is_success")
         expectation.expectedFulfillmentCount = 1
 
         Just(taskIdentifiableSuccess1) // Emits a task with an Id="uno"
@@ -77,7 +77,7 @@ extension PublishersTests {
 
     func test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_success() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_success")
         expectation.expectedFulfillmentCount = 2
 
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
@@ -101,7 +101,7 @@ extension PublishersTests {
 
     func test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_failure() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_failure")
         expectation.expectedFulfillmentCount = 1
 
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
@@ -126,7 +126,7 @@ extension PublishersTests {
 
     func test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_running() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_running")
         expectation.expectedFulfillmentCount = 1
 
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
@@ -151,7 +151,7 @@ extension PublishersTests {
 
     func test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_idle() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_flatmap_identifiable_task_to_severals_successes_when_original_task_is_idle")
         expectation.expectedFulfillmentCount = 1
 
         let subject = PassthroughSubject<Task<String, TestError>, Never>()

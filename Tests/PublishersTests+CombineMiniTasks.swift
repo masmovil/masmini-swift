@@ -7,7 +7,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_2_with_2_idle() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_2_with_2_idle")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -24,7 +24,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_2_with_2_success() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_2_with_2_success")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -42,7 +42,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_2_with_1_success_1_running() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_2_with_1_success_1_running")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -59,7 +59,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_2_with_1_success_1_failure() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_2_with_1_success_1_failure")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -79,7 +79,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_3_with_2_success_1_failure() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_3_with_2_success_1_failure")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -97,7 +97,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_3_with_2_success_1_running() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_3_with_2_success_1_running")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -116,7 +116,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_4_with_2_success_1_failure_1_running() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_4_with_2_success_1_failure_1_running")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -133,7 +133,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_4_with_2_success_2_failure() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_4_with_2_success_2_failure")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -151,7 +151,7 @@ extension PublishersTests {
 
     func test_combining_tuple_of_4_with_4_success() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_tuple_of_4_with_4_success")
         expectation.expectedFulfillmentCount = 1
 
         Publishers
@@ -171,7 +171,7 @@ extension PublishersTests {
 
     func test_combining_two_success_in_array() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_two_success_in_array")
         expectation.expectedFulfillmentCount = 1
 
         Just([taskSuccess1, taskSuccess2])
@@ -188,7 +188,7 @@ extension PublishersTests {
 
     func test_combining_one_success_one_failure_in_array() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_one_success_one_failure_in_array")
         expectation.expectedFulfillmentCount = 1
 
         Just([taskSuccess1, taskFailure1])
@@ -205,7 +205,7 @@ extension PublishersTests {
 
     func test_combining_one_success_one_running_in_array() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_one_success_one_running_in_array")
         expectation.expectedFulfillmentCount = 1
 
         Just([taskSuccess1, taskRunning1])
@@ -221,7 +221,7 @@ extension PublishersTests {
 
     func test_combining_idle_tasks_in_array() {
         var cancellables = Set<AnyCancellable>()
-        let expectation = expectation(description: "wait for async process")
+        let expectation = expectation(description: "test_combining_idle_tasks_in_array")
         expectation.expectedFulfillmentCount = 1
 
         Just([taskIdle1, taskIdle1, taskIdle1, taskIdle1, taskIdle1])
