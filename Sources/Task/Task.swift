@@ -51,7 +51,7 @@ public class Task<T: Equatable, E: Error & Equatable>: Taskable, Equatable, Cust
     }
 
     public var isExpired: Bool {
-        let margin: TimeInterval = 0.1 // 100ms for suscriptions propagations
+        let margin: TimeInterval = 0.250 // 250ms for suscriptions propagations
         return started.timeIntervalSinceNow + expiration.value + margin < 0
     }
 
