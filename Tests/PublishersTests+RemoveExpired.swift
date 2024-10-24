@@ -11,7 +11,7 @@ extension PublishersTests {
         let subject = PassthroughSubject<Task<String, TestError>, Never>()
 
         subject
-            .removeExpired() // Filter the 2 expired task
+            .removeExpired(margin: 0.500) // Filter the 2 expired task
             .removeDuplicates() // Pass only the first success task because the expired they never get here!
             .sink { task in
                 XCTAssertFalse(task.isExpired)
