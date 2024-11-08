@@ -18,13 +18,9 @@ task(:setup) do
   sh('brew outdated mint || brew upgrade mint')
 
   puts('➡️  Mint 🍃')
-  sh('mint bootstrap')  
+  sh('mint bootstrap')
 end
 
 task(:tests) do
-  sh('bundle exec fastlane pass_tests')
-end
-
-task(:validate_podfile) do
-  sh('bundle exec pod lib lint --allow-warnings')
+  sh('swift test')
 end

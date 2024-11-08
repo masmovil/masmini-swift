@@ -24,8 +24,7 @@ let package = Package(
         .testTarget(
             name: "MiniSwiftTests",
             dependencies: ["Mini"],
-            path: "Tests",
-            exclude: ["LinuxMain.swift"]
+            path: "Tests"
         ),
     ]
 )
