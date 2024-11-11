@@ -19,7 +19,16 @@ let package = Package(
         .target(
             name: "Mini",
             dependencies: [],
-            path: "Sources"
+            path: "Sources",
+            exclude: [
+                "../bin",
+                "../_config.yml",
+                "../Dangerfile",
+                "../Gemfile",
+                "../Gemfile.lock",
+                "../Mintfile",
+                "../Rakefile",
+            ]
         ),
         .testTarget(
             name: "MiniSwiftTests",
