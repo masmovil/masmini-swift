@@ -22,5 +22,5 @@ task(:setup) do
 end
 
 task(:tests) do
-  sh('swift test')
+  sh('swift test --enable-code-coverage --disable-swift-testing -v')
 end

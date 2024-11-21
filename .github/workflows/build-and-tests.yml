@@ -15,7 +15,7 @@ jobs:
     runs-on: apps-ci
     timeout-minutes: 120
     steps:
-
+      
     - name: Remove any previous hook 🥸
       run: rm -rf .git/hooks
 
@@ -28,63 +28,37 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          .gems 
+          .gems
           ~/.bundle
         key: ${{ runner.os }}-cache-gems-${{ hashFiles('**/Gemfile.lock') }}
 
     - name: Rake ⚙️
-      run: arch -arm64 rake
+      run: rake
 
-    - name: Run iOS tests ⚙️
-      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-iOS configuration:Debug name:iOS
+    - name: Run tests ⚙️
+      run: rake test
 
-    - name: Upload coverage for iOS to Codecov 📋
+    - name: Generate lcov file 📈
+      run: |
+        xcrun llvm-cov export \
+          -format="lcov" \
+          --ignore-filename-regex=".build|.test-bundle|Tests/" \
+          .build/debug/MiniPackageTests.xctest/Contents/MacOS/MiniPackageTests \
+          -instr-profile .build/debug/codecov/default.profdata \
+          > report.lcov
+
+    - name: Upload package tests coverage to Codecov 📋
       uses: codecov/codecov-action@v3.1.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        xcode: true
-        xcode_archive_path: ./output/iOS/Mini-iOS.xcresult
-        flags: ios
+        files: report.lcov
+        flags: package
         fail_ci_if_error: true
-        name: codecov-ios
+        name: codecov-package
         gcov_ignore: Tests/*
-
-    - name: Run tvOS tests ⚙️
-      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-tvOS configuration:Debug name:tv
-
-    - name: Upload coverage for tvOS to Codecov 📋
-      uses: codecov/codecov-action@v3.1.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        xcode: true
-        xcode_archive_path: ./output/tv/Mini-tvOS.xcresult
-        flags: tv
-        fail_ci_if_error: true
-        name: codecov-tv
-        gcov_ignore: Tests/*
-
-    - name: Run mac tests ⚙️
-      run: arch -arm64 bundle exec fastlane test_scheme scheme:Mini-macOS configuration:Debug name:mac
-
-    - name: Upload coverage for mac to Codecov 📋
-      uses: codecov/codecov-action@v3.1.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        xcode: true
-        xcode_archive_path: ./output/mac/Mini-macOS.xcresult
-        flags: mac
-        fail_ci_if_error: true
-        name: codecov-mac
-        gcov_ignore: Tests/*
-
-    - name: Danger 🚨
-      run: bundle exec danger
-      if: github.event_name  == 'pull_request'
-      env:
-        DANGER_GITHUB_API_TOKEN: ${{ secrets.THORBOT_GITHUB_API_TOKEN }}
 
     - name: Save Output 📦
       uses: actions/upload-artifact@v3
       with:
         name: output
-        path: ${{ github.workspace }}/output
+        path: ${{ github.workspace }}/report.lcov
