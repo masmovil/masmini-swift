@@ -12,10 +12,10 @@ concurrency:
 jobs:
   build:
     name: Check build & tests
-    runs-on: apps-ci
+    runs-on: [apps-ci, ubuntu-latest]
     timeout-minutes: 120
     steps:
-      
+
     - name: Remove any previous hook 🥸
       run: rm -rf .git/hooks
 
