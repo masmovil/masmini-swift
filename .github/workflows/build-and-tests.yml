@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build:
     name: Check build & tests
-    runs-on: [apps-ci, ubuntu-latest]
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
 
