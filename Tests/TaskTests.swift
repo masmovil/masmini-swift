@@ -10,7 +10,7 @@ class TaskTests: XCTestCase {
         XCTAssertEqual(task.status, .running)
         XCTAssertNil(task.error)
 
-        XCTAssertFalse(task.isRunning)
+        XCTAssertTrue(task.isRunning)
         XCTAssertFalse(task.isFailure)
         XCTAssertFalse(task.isTerminal)
         XCTAssertFalse(task.isSuccessful)
