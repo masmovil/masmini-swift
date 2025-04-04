@@ -36,8 +36,9 @@ jobs:
       run: rake
 
     - name: Swiftlint 👀
-      run: mint swiftlint | \
-        sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
+      run: |
+        mint swiftlint \
+        | sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
 
     - name: Run tests ⚙️
       run: rake test
