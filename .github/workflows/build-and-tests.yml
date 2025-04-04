@@ -35,6 +35,11 @@ jobs:
     - name: Rake ⚙️
       run: rake
 
+    - name: GitHub Action for SwiftLint with --strict
+      uses: norio-nomura/action-swiftlint@3.2.1
+      with:
+        args: --strict
+
     - name: Run tests ⚙️
       run: rake test
 
