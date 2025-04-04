@@ -39,7 +39,7 @@ jobs:
 
     - name: Swiftlint 👀
       run: |
-        mint run swiftlint --strict \
+        set -o pipefail && mint run swiftlint --strict \
         | sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
 
     - name: Run tests ⚙️
