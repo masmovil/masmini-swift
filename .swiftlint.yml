@@ -10,7 +10,6 @@ opt_in_rules:
   - overridden_super_call
   - yoda_condition
   - modifier_order
-  - anyobject_protocol
   #- explicit_acl  
   - cyclomatic_complexity
   #style
