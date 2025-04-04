@@ -35,10 +35,9 @@ jobs:
     - name: Rake ⚙️
       run: rake
 
-    - name: GitHub Action for SwiftLint with --strict
-      uses: norio-nomura/action-swiftlint@3.2.1
-      with:
-        args: --strict
+    - name: Swiftlint 👀
+      run: mint swiftlint | \
+        sed -E 's/^(.*):([0-9]+):([0-9]+): (warning|error|[^:]+): (.*)/::\4 file=\1,line=\2,col=\3::\5/'
 
     - name: Run tests ⚙️
       run: rake test
