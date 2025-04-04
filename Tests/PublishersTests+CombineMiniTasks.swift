@@ -94,7 +94,7 @@ extension PublishersTests {
 
         waitForExpectations(timeout: 2)
     }
-    
+
     func test_combining_tuple_of_3_with_2_success_1_failure() {
         var cancellables = Set<AnyCancellable>()
         let expectation = expectation(description: "test_combining_tuple_of_3_with_2_success_1_failure")
