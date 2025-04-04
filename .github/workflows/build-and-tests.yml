@@ -63,7 +63,7 @@ jobs:
         gcov_ignore: Tests/*
 
     - name: Save Output 📦
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: output
         path: ${{ github.workspace }}/report.lcov
