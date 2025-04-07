@@ -15,7 +15,7 @@ jobs:
     runs-on: apps-ci
     timeout-minutes: 120
     steps:
-    
+
     - name: Checkout 🔎
       uses: actions/checkout@v3
       with:
