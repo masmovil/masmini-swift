@@ -16,7 +16,7 @@ public final class ForwardingChain: Chain {
     public init(next: @escaping Next) {
         self.next = next
     }
-}   
+}
 
 public final class RootChain: Chain {
     private let map: SubscriptionMap
