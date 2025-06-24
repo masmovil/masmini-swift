@@ -124,7 +124,3 @@ public extension Store {
         }
     }
 }
-
-public extension Store {
-
-}
