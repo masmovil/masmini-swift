@@ -24,13 +24,13 @@ class StoreTests: XCTestCase {
             }
             .store(in: &cancellables)
 
-        // THIS PASS
+        // THIS PASSES
         store.state = TestState(testTask: .success(1), counter: 1)
 
-        // THIS NOT, Had the same success value from previous
+        // THIS DOES NOT, had the same success value as the previous one
         store.state = TestState(testTask: .success(1), counter: 2)
 
-        // THIS PASS
+        // THIS PASSES
         store.state = TestState(testTask: .success(3), counter: 1)
 
         wait(for: [expectation], timeout: 5.0)
