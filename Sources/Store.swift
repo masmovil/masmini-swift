@@ -89,6 +89,14 @@ public class Store<StoreState: State, StoreController: Cancellable>: Publisher {
         .init(subject: stateCurrentValueSubject)
     }
 
+    /// Scope a task from the state and receive only new updated since subscription.
+    func scope<T: Taskable & Equatable>(_ transform: @escaping (StoreState) -> T) -> AnyPublisher<T, Failure> {
+        passthroughPublisher
+            .map(transform)
+            .removeDuplicates()
+            .eraseToAnyPublisher()
+    }
+
     private var stateCurrentValueSubject: CurrentValueSubject<StoreState, Never>
     private var statePassthroughSubject: PassthroughSubject<StoreState, Never>
     private let queue = DispatchQueue(label: "atomic state")
@@ -115,4 +123,8 @@ public extension Store {
             subject.subscribe(subscriber)
         }
     }
+}
+
+public extension Store {
+
 }

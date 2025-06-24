@@ -1,0 +1,40 @@
+@testable import Mini
+import XCTest
+import Combine
+
+class StoreTests: XCTestCase {
+    func test_scope() {
+        var cancellables = Set<AnyCancellable>()
+        let expectation = XCTestExpectation(description: "Scope usage check")
+        expectation.expectedFulfillmentCount = 2
+        let dispatcher = Dispatcher()
+        let initialState = TestState()
+        let store = Store<TestState, TestStoreController>(initialState, dispatcher: dispatcher, storeController: TestStoreController())
+        
+        //DISCARDED, SCOPE IS NOT ACTIVE YET
+        store.state = TestState(testTask: .success(5), counter: 1)
+
+        var counterValue = 0
+        //SCOPING....
+        store
+            .scope { $0.testTask }
+            .sink { task in
+                expectation.fulfill()
+                counterValue += 1
+            }
+            .store(in: &cancellables)
+        
+        // THIS PASS
+        store.state = TestState(testTask: .success(1), counter: 1)
+
+        // THIS NOT, Had the same success value from previous
+        store.state = TestState(testTask: .success(1), counter: 2)
+        
+        // THIS PASS
+        store.state = TestState(testTask: .success(3), counter: 1)
+        
+        wait(for: [expectation], timeout: 5.0)
+
+        XCTAssertTrue(counterValue == 2)
+    }
+}
